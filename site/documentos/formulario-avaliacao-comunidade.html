@@ -82,8 +82,14 @@
     </ul>
   </section>
 
+  <section>
+    <h2>Widget de avaliação rápida nas páginas de conteúdo</h2>
+    <p>Além do formulário completo em <a href="../participe.html">Participe</a>, cada página de conteúdo (Sobre, Tipos de Violência, Legislação, Como Denunciar, Rede de Apoio) exibe um pequeno widget "Esta informação foi útil? Sim / Não" no rodapé, implementado em <code>site/js/main.js</code> (função <code>setupFeedbackWidget</code>).</p>
+    <div class="notice"><strong>Limitação atual:</strong> como o site é estático, o widget hoje só salva a resposta localmente no navegador da pessoa (<code>localStorage</code>), apenas para não perguntar de novo na mesma página — a resposta ainda <strong>não é enviada a lugar nenhum</strong>. Depois que o Google Form real estiver pronto, dá para conectar os cliques do widget a ele (via <code>fetch</code> com <code>mode: "no-cors"</code> para a URL de submissão do Forms), registrando também qual página gerou a resposta.</div>
+  </section>
+
   <div class="notice">
-    <strong>Pendente:</strong> este guia descreve como criar o formulário, mas ele precisa ser criado manualmente (requer login numa conta Google). Após criá-lo, atualize o <code>&lt;iframe&gt;</code> em <code>site/participe.html</code>, envie o link direto na Atividade 31 do AVA, e marque o item como concluído no <a href="checklist-atividades.html">Checklist das 31 Atividades</a>.
+    <strong>Pendente:</strong> este guia descreve como criar o formulário, mas ele precisa ser criado manualmente (requer login numa conta Google). Após criá-lo, atualize o <code>&lt;iframe&gt;</code> em <code>site/participe.html</code>, envie o link direto na Atividade 31 do AVA, marque o item como concluído no <a href="checklist-atividades.html">Checklist das 31 Atividades</a> e, opcionalmente, conecte o widget de avaliação rápida ao formulário real.
   </div>
 </main>
 

@@ -38,9 +38,16 @@ Como o formulário é público e pode coletar dados pessoais (nome, se informado
 - Nunca publicar respostas individuais identificáveis no relatório final — reportar apenas dados agregados (ex.: "80% avaliaram o site como muito útil").
 - Caso a instituição parceira solicite, é possível desativar a coleta de e-mails nas configurações do Google Forms para reforçar o anonimato.
 
+## Widget de avaliação rápida nas páginas de conteúdo
+
+Além do formulário completo em `site/participe.html`, cada página de conteúdo (Sobre, Tipos de Violência, Legislação, Como Denunciar, Rede de Apoio) agora exibe um pequeno widget "Esta informação foi útil? Sim / Não" no rodapé, implementado em `site/js/main.js` (função `setupFeedbackWidget`). Ele existe para capturar feedback rápido sem exigir que a pessoa saia da página.
+
+**Limitação atual:** como o site é estático, esse widget hoje só salva a resposta localmente no navegador da pessoa (`localStorage`), apenas para não perguntar de novo na mesma página — a resposta **não é enviada a lugar nenhum** ainda. Depois que o Google Form real de `site/participe.html` estiver pronto, é possível conectar os cliques desse widget a ele (submissão via `fetch` com `mode: "no-cors"` para a URL de submissão do Forms, usando os IDs de campo `entry.XXXXXXX` do formulário), registrando também qual página gerou a resposta. Essa conexão fica pendente até o formulário real existir.
+
 ## Status
 
 ⚠️ **Pendente:** este documento descreve como criar o formulário, mas o formulário em si precisa ser criado manualmente pelo estudante (requer login numa conta Google). Após criá-lo, atualize:
 1. O `<iframe>` em `site/participe.html` com o código de incorporação real.
 2. O link direto do formulário, para envio na Atividade 31 do Ambiente Virtual de Aprendizagem.
 3. O status desta atividade em `docs/checklist-atividades.md`.
+4. (Opcional) Conectar o widget de avaliação rápida das páginas de conteúdo ao formulário real, conforme descrito acima.
