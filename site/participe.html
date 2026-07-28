@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://vlibras.gov.br https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://vlibras.gov.br https://cdn.jsdelivr.net; media-src 'self' https://vlibras.gov.br https://cdn.jsdelivr.net; connect-src 'self' https://docs.google.com https://vlibras.gov.br https://cdn.jsdelivr.net https://api.web3forms.com; frame-src https://docs.google.com https://forms.gle https://vlibras.gov.br; font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self';">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Participe e Avalie — IndaCity</title>
+<meta name="description" content="Avalie o site e participe da rede de conscientização contra a violência doméstica.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://caxudex.github.io/violencia-domestica-extensao/participe.html">
+<meta property="og:title" content="Participe e Avalie — IndaCity">
+<meta property="og:description" content="Avalie o site e participe da rede de conscientização contra a violência doméstica.">
+<meta property="og:image" content="https://caxudex.github.io/violencia-domestica-extensao/favicon.svg">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="index.html"><svg width="26" height="26" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M16 2 L28 6 V15 C28 22.5 22.7 28.4 16 30 C9.3 28.4 4 22.5 4 15 V6 Z" fill="none" stroke="#fff" stroke-width="2"/><path d="M16 8.5 C17.2 6.6 20.5 6.4 21.7 9 C22.9 11.6 20.4 14.6 16 19 C11.6 14.6 9.1 11.6 10.3 9 C11.5 6.4 14.8 6.6 16 8.5 Z" fill="#fff"/></svg>IndaCity</a>
+    <button class="nav-toggle" aria-expanded="false" aria-label="Abrir menu">☰ Menu</button>
+    <nav class="main-nav" aria-label="Navegação principal">
+      <a href="index.html">Home</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="tipos-de-violencia.html">Tipos de Violência</a>
+      <a href="legislacao.html">Legislação</a>
+      <a href="como-denunciar.html">Como Denunciar</a>
+      <a href="rede-de-apoio.html">Rede de Apoio</a>
+      <a href="contato.html">Contato</a>
+      <a href="participe.html" aria-current="page">Participe</a>
+      <button class="exit-button" type="button">Sair rapidamente</button>
+    </nav>
+  </div>
+</header>
+
+<main id="conteudo">
+  <section class="hero">
+    <h1>Participe e Avalie</h1>
+    <p>Este site é fruto de um projeto de extensão universitária de conscientização e combate à violência doméstica. Sua opinião ajuda a medir o alcance do projeto e a melhorar o conteúdo para quem mais precisa.</p>
+    <p id="participant-counter" class="participant-counter" data-csv-url="SUBSTITUA_PELA_URL_CSV_PUBLICADA" hidden></p>
+  </section>
+
+  <div class="notice">
+    Você pode participar de duas formas: <strong>avaliação anônima</strong> (não precisa se identificar) ou <strong>registro de participação institucional</strong> (se quiser que seu nome e instituição constem como evidência formal). Escolha o que preferir ao preencher o formulário abaixo.
+  </div>
+
+  <section>
+    <h2>Formulário de avaliação</h2>
+    <p>Leva menos de 2 minutos. Se o formulário abaixo não carregar, use o <a href="https://docs.google.com/forms/d/e/1FAIpQLSfA6eaO5LOXyTP2DMPiCTXPM-f6n1N9j48hNhtiEX1L6mhgHg/viewform">link direto</a>.</p>
+
+    <!--
+      INSTRUÇÕES PARA O ESTUDANTE:
+      1. Crie o formulário em https://forms.google.com seguindo o guia em docs/formulario-avaliacao-comunidade.md
+      2. No Google Forms, vá em Enviar > Incorporar <> e copie o <iframe> gerado.
+      3. Substitua o <iframe> de exemplo abaixo (e o href do link "#form-direct-link" acima) pelos seus.
+    -->
+    <div class="form-embed" id="form-embed">
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSfA6eaO5LOXyTP2DMPiCTXPM-f6n1N9j48hNhtiEX1L6mhgHg/viewform"
+        width="100%" height="900" loading="lazy"
+        title="Formulário de avaliação da comunidade">
+        Carregando formulário…
+      </iframe>
+    </div>
+  </section>
+
+  <section aria-labelledby="registro-institucional-heading">
+    <div class="institutional-panel">
+      <h2 id="registro-institucional-heading">Registro de Participação Institucional</h2>
+      <p>Você representa uma instituição (CRAS, CREAS, ONG, órgão público, universidade)? Ao preencher os campos opcionais de <strong>nome</strong> e <strong>instituição/organização</strong> dentro do formulário acima, sua participação passa a constar formalmente na planilha de respostas — com data e hora registradas automaticamente — servindo como evidência documentável para o relatório apresentado à instituição parceira e à universidade.</p>
+      <p>Se preferir manter sua resposta anônima, é só deixar esses campos em branco — nenhum dado de identificação é obrigatório.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Outras formas de participar</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Compartilhe</h3>
+        <p>Compartilhe este site com pessoas e instituições que possam se beneficiar das informações ou precisar de apoio.</p>
+      </div>
+      <div class="card">
+        <h3>Conheça a rede de apoio</h3>
+        <p>Veja como CRAS, CREAS e ONGs locais podem ajudar quem está em situação de violência doméstica.</p>
+        <a href="rede-de-apoio.html">Ver Rede de Apoio</a>
+      </div>
+      <div class="card">
+        <h3>Fale com a instituição</h3>
+        <p>Tem dúvidas ou sugestões diretas? Use o formulário de contato.</p>
+        <a href="contato.html">Ir para Contato</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>&copy; 2026 IndaCity — Proteção contra Violência Doméstica</span>
+    <span>Instituição de referência: Prefeitura Municipal de Indaial</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

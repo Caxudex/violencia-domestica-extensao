@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://vlibras.gov.br https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://vlibras.gov.br https://cdn.jsdelivr.net; media-src 'self' https://vlibras.gov.br https://cdn.jsdelivr.net; connect-src 'self' https://docs.google.com https://vlibras.gov.br https://cdn.jsdelivr.net https://api.web3forms.com; frame-src https://docs.google.com https://forms.gle https://vlibras.gov.br; font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self';">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contato — IndaCity</title>
+<meta name="description" content="Fale com a equipe da Prefeitura Municipal de Indaial.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://caxudex.github.io/violencia-domestica-extensao/contato.html">
+<meta property="og:title" content="Contato — IndaCity">
+<meta property="og:description" content="Fale com a equipe da Prefeitura Municipal de Indaial.">
+<meta property="og:image" content="https://caxudex.github.io/violencia-domestica-extensao/favicon.svg">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="index.html"><svg width="26" height="26" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M16 2 L28 6 V15 C28 22.5 22.7 28.4 16 30 C9.3 28.4 4 22.5 4 15 V6 Z" fill="none" stroke="#fff" stroke-width="2"/><path d="M16 8.5 C17.2 6.6 20.5 6.4 21.7 9 C22.9 11.6 20.4 14.6 16 19 C11.6 14.6 9.1 11.6 10.3 9 C11.5 6.4 14.8 6.6 16 8.5 Z" fill="#fff"/></svg>IndaCity</a>
+    <button class="nav-toggle" aria-expanded="false" aria-label="Abrir menu">☰ Menu</button>
+    <nav class="main-nav" aria-label="Navegação principal">
+      <a href="index.html">Home</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="tipos-de-violencia.html">Tipos de Violência</a>
+      <a href="legislacao.html">Legislação</a>
+      <a href="como-denunciar.html">Como Denunciar</a>
+      <a href="rede-de-apoio.html">Rede de Apoio</a>
+      <a href="contato.html" aria-current="page">Contato</a>
+      <a href="participe.html">Participe</a>
+      <button class="exit-button" type="button">Sair rapidamente</button>
+    </nav>
+  </div>
+</header>
+
+<main id="conteudo">
+  <section class="hero">
+    <h1>Contato</h1>
+    <p>Use o formulário abaixo para falar com a equipe da Prefeitura Municipal de Indaial.</p>
+  </section>
+
+  <div class="notice">
+    Este formulário <strong>não substitui</strong> o atendimento de emergência. Em caso de risco imediato, ligue <strong><a href="tel:190">190</a></strong>.
+  </div>
+
+  <section class="contact-grid">
+    <div class="card contact-info">
+      <h2>Informações de contato</h2>
+      <ul class="contact-details">
+        <li><strong>Instituição:</strong> Prefeitura Municipal de Indaial</li>
+        <li><strong>Endereço:</strong> Avenida Getúlio Vargas, nº 126, Centro, Indaial - SC, CEP 89080-000</li>
+        <li><strong>Telefone:</strong> <a href="tel:+554733178800">(47) 3317-8800</a></li>
+        <li><strong>E-mail:</strong> <a href="mailto:recepcao.gabinete@indaial.sc.gov.br">recepcao.gabinete@indaial.sc.gov.br</a></li>
+        <li><strong>Atendimento:</strong> segunda a sexta, das 8h às 17h</li>
+      </ul>
+    </div>
+
+    <div class="card contact-form-card">
+      <h2>Envie uma mensagem</h2>
+      <p class="required-note">Campos com <span aria-hidden="true">*</span><span class="sr-only">(obrigatório)</span> são obrigatórios.</p>
+      <form id="contact-form" class="contact-form" data-web3forms-key="2b243ee2-d4d7-48ad-b623-372418b05e1c" novalidate>
+        <input type="hidden" name="subject" value="Nova mensagem — IndaCity (Contato)">
+        <div>
+          <label for="name">Nome <span aria-hidden="true">*</span><span class="sr-only">(obrigatório)</span></label>
+          <input type="text" id="name" name="name" placeholder="Seu nome completo" maxlength="120" required>
+        </div>
+        <div>
+          <label for="email">E-mail <span aria-hidden="true">*</span><span class="sr-only">(obrigatório)</span></label>
+          <input type="email" id="email" name="email" placeholder="seu@email.com" maxlength="180" required>
+        </div>
+        <div>
+          <label for="message">Mensagem <span aria-hidden="true">*</span><span class="sr-only">(obrigatório)</span></label>
+          <textarea id="message" name="message" rows="5" placeholder="Como podemos ajudar?" maxlength="2000" required></textarea>
+        </div>
+        <div class="hp-field" aria-hidden="true">
+          <label for="website">Não preencha este campo</label>
+          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+        </div>
+        <button class="btn-primary" type="submit">Enviar</button>
+        <p id="form-status" class="form-status" role="status"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>&copy; 2026 IndaCity — Proteção contra Violência Doméstica</span>
+    <span>Instituição de referência: Prefeitura Municipal de Indaial</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
