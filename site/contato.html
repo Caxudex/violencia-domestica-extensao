@@ -41,12 +41,11 @@
   <section class="contact-grid">
     <div class="card contact-info">
       <h2>Informações de contato</h2>
-      <p class="placeholder-tag">Endereço, telefone e e-mail abaixo são provisórios — substituir pelos dados reais da secretaria/departamento responsável na Prefeitura de Indaial</p>
       <ul class="contact-details">
         <li><strong>Instituição:</strong> Prefeitura Municipal de Indaial</li>
         <li><strong>Endereço:</strong> Avenida Getúlio Vargas, nº 126, Centro, Indaial - SC, CEP 89080-000</li>
-        <li><strong>Telefone:</strong> <a href="tel:+5500000000">(47) 3317-8800</a></li>
-        <li><strong>E-mail:</strong> <a href="mailto:contato@instituicao.org.br"> recepcao.gabinete@indaial.sc.gov.br</a></li>
+        <li><strong>Telefone:</strong> <a href="tel:+554733178800">(47) 3317-8800</a></li>
+        <li><strong>E-mail:</strong> <a href="mailto:recepcao.gabinete@indaial.sc.gov.br">recepcao.gabinete@indaial.sc.gov.br</a></li>
         <li><strong>Atendimento:</strong> segunda a sexta, das 8h às 17h</li>
       </ul>
     </div>
@@ -57,15 +56,15 @@
       <form id="contact-form" class="contact-form" novalidate>
         <div>
           <label for="name">Nome <span aria-hidden="true">*</span><span class="sr-only">(obrigatório)</span></label>
-          <input type="text" id="name" name="name" required>
+          <input type="text" id="name" name="name" placeholder="Seu nome completo" required>
         </div>
         <div>
           <label for="email">E-mail <span aria-hidden="true">*</span><span class="sr-only">(obrigatório)</span></label>
-          <input type="email" id="email" name="email" required>
+          <input type="email" id="email" name="email" placeholder="seu@email.com" required>
         </div>
         <div>
           <label for="message">Mensagem <span aria-hidden="true">*</span><span class="sr-only">(obrigatório)</span></label>
-          <textarea id="message" name="message" rows="5" required></textarea>
+          <textarea id="message" name="message" rows="5" placeholder="Como podemos ajudar?" required></textarea>
         </div>
         <button class="btn-primary" type="submit">Enviar</button>
         <p id="form-status" class="form-status" role="status"></p>
