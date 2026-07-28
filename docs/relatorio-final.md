@@ -1,7 +1,7 @@
 # Relatório Detalhado — Atividade Extensionista
 ## Desenvolvimento de site sobre Enfrentamento à Violência Doméstica
 
-**Instituição parceira:** CRAS Novo Amanhã (fictícia, para fins desta atividade)
+**Instituição concedente de referência:** Prefeitura Municipal de Indaial (parceria em processo de formalização)
 **Carga horária total do projeto:** 149 horas
 
 ---
@@ -13,7 +13,7 @@ Este relatório documenta o processo de desenvolvimento de um site colaborativo 
 ## 2. Desenvolvimento por etapa
 
 ### Etapa 1 — Planejamento e Pesquisa (15h, 10h presenciais)
-Foi realizada pesquisa bibliográfica sobre a Lei Maria da Penha (11.340/2006), a Política Nacional de Enfrentamento à Violência contra as Mulheres e o ECA. Foi definida a instituição parceira (CRAS Novo Amanhã) e a estrutura inicial do site. Documento produzido: `docs/01-planejamento-pesquisa.md`.
+Foi realizada pesquisa bibliográfica sobre a Lei Maria da Penha (11.340/2006), a Política Nacional de Enfrentamento à Violência contra as Mulheres e o ECA. Foi definida a instituição concedente de referência (Prefeitura Municipal de Indaial, parceria a ser formalizada) e a estrutura inicial do site. Documento produzido: `docs/01-planejamento-pesquisa.md`.
 
 ### Etapa 2 — Levantamento de Informações (15h, 10h presenciais)
 Levantamento com profissionais da rede de proteção (assistente social do CRAS, ONG, Polícia Civil e Militar), utilizando um [Google Form real](https://docs.google.com/forms/d/e/1FAIpQLSfA6eaO5LOXyTP2DMPiCTXPM-f6n1N9j48hNhtiEX1L6mhgHg/viewform) como instrumento estruturado de coleta, conforme sugerido pelo edital. Identificadas as necessidades centrais: canais de denúncia visíveis, botão de saída rápida por segurança digital, linguagem acessível e informações sobre medidas protetivas. Documento produzido: `docs/02-levantamento-informacoes.md`.

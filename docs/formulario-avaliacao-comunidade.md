@@ -50,7 +50,7 @@ A página `site/participe.html` tem um contador ("X pessoas já avaliaram o site
 4. Copie o link gerado (algo como `https://docs.google.com/spreadsheets/d/e/.../pub?output=csv`).
 5. Abra `site/participe.html` e substitua `SUBSTITUA_PELA_URL_CSV_PUBLICADA` (no atributo `data-csv-url` do elemento `#participant-counter`) por esse link.
 
-O contador (implementado em `site/js/main.js`, função `setupParticipantCounter`) busca esse CSV via `fetch` e conta as linhas automaticamente — nenhuma outra alteração de código é necessária. Enquanto o link não for configurado, o contador simplesmente permanece invisível, sem quebrar a página.
+O contador (implementado em `site/js/main.js`, função `setupParticipantCounter`) busca esse CSV via `fetch` e mostra **dois números**: o total de respostas ("X pessoas avaliaram o site") e, separadamente, quantas delas preencheram o campo "Instituição/Organização" ("Y com presença institucional registrada") — nenhuma outra alteração de código é necessária, desde que o campo do formulário continue com "Instituição" no nome (é assim que o script encontra a coluna certa na planilha). Enquanto o link não for configurado, o contador simplesmente permanece invisível, sem quebrar a página.
 
 **Atenção de privacidade:** publicar a planilha "na web" a torna acessível a qualquer pessoa com o link, incluindo todas as respostas (nomes e instituições informados). Se isso for uma preocupação, publique apenas as colunas de avaliação (sem nome/instituição) numa aba separada, ou pule esta funcionalidade — ela é opcional.
 

@@ -119,14 +119,88 @@ function setupFontSizeControl() {
   });
 }
 
-// Widget de avaliação rápida ("Esta informação foi útil?"), exibido apenas
-// nas páginas de conteúdo (não na Home, Contato, Participe ou Documentação,
-// que já têm seus próprios mecanismos de feedback/avaliação).
-// Contador de participantes na página Participe: lê a contagem de respostas
-// a partir de uma planilha do Google Sheets publicada na web como CSV
-// (vinculada ao formulário de avaliação). Enquanto o link não for
-// configurado (ver docs/formulario-avaliacao-comunidade.md), o elemento
-// fica oculto — nada quebra por causa disso.
+// Enquanto o Google Form real da página Participe não for configurado, o
+// iframe placeholder mostra um erro feio do Google Drive ("Sorry, the file
+// you have requested does not exist"). Troca isso por uma mensagem amigável,
+// mantendo a área visível em vez de escondida.
+function setupFormEmbed() {
+  var container = document.querySelector("#form-embed");
+  if (!container) return;
+  var iframe = container.querySelector("iframe");
+  if (!iframe) return;
+  var src = iframe.getAttribute("src") || "";
+  if (src.indexOf("SUBSTITUA") === -1) return;
+
+  container.innerHTML =
+    '<div class="form-pending">' +
+    "<p><strong>O formulário está sendo preparado.</strong> Em breve você poderá avaliar o site diretamente aqui.</p>" +
+    '<p>Enquanto isso, você pode <a href="contato.html">falar com a instituição pelo formulário de contato</a>.</p>' +
+    "</div>";
+
+  var directLink = document.querySelector("#form-direct-link");
+  var introParagraph = directLink && directLink.closest("p");
+  if (introParagraph) {
+    introParagraph.hidden = true;
+  }
+}
+
+// Parser simples de CSV que respeita campos entre aspas (necessário porque
+// respostas de texto livre do formulário podem conter vírgulas).
+function parseCsv(text) {
+  var rows = [];
+  var row = [];
+  var field = "";
+  var inQuotes = false;
+  for (var i = 0; i < text.length; i++) {
+    var char = text[i];
+    var next = text[i + 1];
+    if (inQuotes) {
+      if (char === '"' && next === '"') {
+        field += '"';
+        i++;
+      } else if (char === '"') {
+        inQuotes = false;
+      } else {
+        field += char;
+      }
+    } else if (char === '"') {
+      inQuotes = true;
+    } else if (char === ",") {
+      row.push(field);
+      field = "";
+    } else if (char === "\n" || char === "\r") {
+      if (char === "\r" && next === "\n") i++;
+      row.push(field);
+      rows.push(row);
+      row = [];
+      field = "";
+    } else {
+      field += char;
+    }
+  }
+  if (field.length > 0 || row.length > 0) {
+    row.push(field);
+    rows.push(row);
+  }
+  return rows;
+}
+
+function findColumnIndex(headerRow, keyword) {
+  var normalized = keyword.toLowerCase();
+  for (var i = 0; i < headerRow.length; i++) {
+    if ((headerRow[i] || "").toLowerCase().indexOf(normalized) !== -1) {
+      return i;
+    }
+  }
+  return -1;
+}
+
+// Contador de participantes na página Participe: lê a planilha de respostas
+// do Google Sheets publicada na web como CSV (vinculada ao formulário de
+// avaliação) e mostra dois números — total de avaliações, e quantas têm o
+// campo "Instituição/Organização" preenchido (presença institucional
+// registrada). Enquanto o link não for configurado (ver
+// docs/formulario-avaliacao-comunidade.md), o elemento fica oculto.
 function setupParticipantCounter() {
   var el = document.querySelector("#participant-counter");
   if (!el) return;
@@ -139,13 +213,30 @@ function setupParticipantCounter() {
       return response.text();
     })
     .then(function (text) {
-      var lines = text.trim().split("\n").filter(function (line) {
-        return line.trim().length > 0;
+      var rows = parseCsv(text).filter(function (r) {
+        return r.length > 1 || (r.length === 1 && (r[0] || "").trim() !== "");
       });
-      var count = Math.max(0, lines.length - 1); // desconta a linha de cabeçalho
-      el.textContent = count === 1
-        ? "1 pessoa já avaliou o site"
-        : count + " pessoas já avaliaram o site";
+      if (rows.length < 1) {
+        el.hidden = true;
+        return;
+      }
+
+      var header = rows[0];
+      var dataRows = rows.slice(1);
+      var total = dataRows.length;
+      var instIndex = findColumnIndex(header, "institui");
+      var comPresenca = instIndex === -1 ? 0 : dataRows.filter(function (r) {
+        return ((r[instIndex] || "").trim() !== "");
+      }).length;
+
+      var totalText = total === 1 ? "1 pessoa avaliou o site" : total + " pessoas avaliaram o site";
+      var presencaText = instIndex === -1 ? "" : (
+        " · " + (comPresenca === 1
+          ? "1 com presença institucional registrada"
+          : comPresenca + " com presença institucional registrada")
+      );
+
+      el.textContent = totalText + presencaText;
       el.hidden = false;
     })
     .catch(function () {
@@ -237,5 +328,6 @@ document.addEventListener("DOMContentLoaded", function () {
   setupFontSizeControl();
   setupContactForm();
   setupFeedbackWidget();
+  setupFormEmbed();
   setupParticipantCounter();
 });

@@ -7,7 +7,7 @@ Traduzir as necessidades levantadas na Etapa 2 em wireframes simples (esboços) 
 
 ```
 +--------------------------------------------------------------+
-| [Logo: CRAS Novo Amanhã]   Home Sobre Tipos Legislação        |
+| [Logo: Prefeitura Municipal de Indaial]   Home Sobre Tipos Legislação        |
 |                             Denúncia Rede Contato             |
 |                                          [ SAIR RAPIDAMENTE ] |
 +--------------------------------------------------------------+
@@ -41,7 +41,7 @@ O botão "SAIR RAPIDAMENTE" fica sempre visível e com destaque visual (cor de a
 | HEADER                                                        |
 +--------------------------------------------------------------+
 | Texto: objetivo do projeto de extensão                        |
-| Texto: parceria com CRAS Novo Amanhã                           |
+| Texto: parceria com Prefeitura Municipal de Indaial                           |
 +--------------------------------------------------------------+
 | FOOTER                                                         |
 +--------------------------------------------------------------+
