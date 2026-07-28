@@ -292,15 +292,45 @@ function setupFeedbackWidget() {
   }
 }
 
+// Remove tags HTML de uma string (defesa em profundidade: mesmo que este
+// campo nunca seja re-inserido no DOM hoje, evita que passe adiante se o
+// formulário vier a ser conectado a um backend/serviço no futuro).
+function stripHtml(value) {
+  return value.replace(/<[^>]*>/g, "");
+}
+
 function setupContactForm() {
   var form = document.querySelector("#contact-form");
   if (!form) return;
   var status = document.querySelector("#form-status");
+  var RATE_LIMIT_KEY = "contact-form-last-submit";
+  var RATE_LIMIT_MS = 30000; // 30 segundos entre envios
+
   form.addEventListener("submit", function (event) {
     event.preventDefault();
-    var name = form.elements["name"].value.trim();
-    var email = form.elements["email"].value.trim();
-    var message = form.elements["message"].value.trim();
+
+    // Honeypot: campo invisível que só bots costumam preencher.
+    // Finge sucesso para não revelar a detecção, mas não processa nada.
+    var honeypot = form.elements["website"];
+    if (honeypot && honeypot.value.trim() !== "") {
+      status.textContent = "Mensagem registrada. Em caso de emergência, ligue 190.";
+      status.className = "form-status success";
+      form.reset();
+      return;
+    }
+
+    // Rate limiting básico (client-side, não é proteção robusta contra um
+    // atacante determinado, mas reduz reenvios acidentais/abuso casual).
+    var lastSubmit = localStorage.getItem(RATE_LIMIT_KEY);
+    if (lastSubmit && (Date.now() - parseInt(lastSubmit, 10)) < RATE_LIMIT_MS) {
+      status.textContent = "Aguarde um momento antes de enviar novamente.";
+      status.className = "form-status error";
+      return;
+    }
+
+    var name = stripHtml(form.elements["name"].value.trim()).slice(0, 120);
+    var email = stripHtml(form.elements["email"].value.trim()).slice(0, 180);
+    var message = stripHtml(form.elements["message"].value.trim()).slice(0, 2000);
     var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!name || !email || !message) {
@@ -314,12 +344,104 @@ function setupContactForm() {
       return;
     }
 
-    // Sem backend nesta entrega (RNF05): a integração com e-mail/CRM real
-    // fica a cargo da instituição parceira ao adotar o site.
-    status.textContent = "Mensagem registrada. Em caso de emergência, ligue 190.";
-    status.className = "form-status success";
-    form.reset();
+    // Envio real via Web3Forms (serviço gratuito, sem backend próprio —
+    // RNF05 continua respeitado, já que não hospedamos servidor algum).
+    // Guia de configuração: docs/formulario-contato-web3forms.md
+    var accessKey = form.getAttribute("data-web3forms-key") || "";
+    if (!accessKey || accessKey.indexOf("SUBSTITUA") !== -1) {
+      status.textContent = "O envio ainda não foi configurado. Em caso de emergência, ligue 190.";
+      status.className = "form-status error";
+      return;
+    }
+
+    var submitButton = form.querySelector('button[type="submit"]');
+    if (submitButton) submitButton.disabled = true;
+    status.textContent = "Enviando…";
+    status.className = "form-status";
+
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      body: JSON.stringify({
+        access_key: accessKey,
+        subject: (form.elements["subject"] && form.elements["subject"].value) || "Nova mensagem — IndaCity",
+        name: name,
+        email: email,
+        message: message
+      })
+    })
+      .then(function (response) { return response.json(); })
+      .then(function (result) {
+        if (result.success) {
+          localStorage.setItem(RATE_LIMIT_KEY, String(Date.now()));
+          status.textContent = "Mensagem enviada com sucesso! Em caso de emergência, ligue 190.";
+          status.className = "form-status success";
+          form.reset();
+        } else {
+          status.textContent = "Não foi possível enviar agora. Tente novamente em instantes.";
+          status.className = "form-status error";
+        }
+      })
+      .catch(function () {
+        status.textContent = "Não foi possível enviar agora. Verifique sua conexão e tente de novo.";
+        status.className = "form-status error";
+      })
+      .finally(function () {
+        if (submitButton) submitButton.disabled = false;
+      });
   });
+}
+
+// Widget VLibras (tradutor de Libras do governo federal), injetado em todas
+// as páginas a partir deste script único. Padrão comum em sites públicos
+// brasileiros, por exigência de acessibilidade (LBI — Lei 13.146/2015).
+// Entrada suave das seções ao rolar a página. Progressive enhancement: a
+// classe .reveal só é adicionada aqui, então sem JS (ou com
+// prefers-reduced-motion) o conteúdo permanece visível normalmente.
+function setupScrollReveal() {
+  var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduceMotion || !("IntersectionObserver" in window)) return;
+
+  var main = document.querySelector("main");
+  if (!main) return;
+  var sections = main.querySelectorAll(":scope > section");
+  if (!sections.length) return;
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
+
+  sections.forEach(function (section) {
+    section.classList.add("reveal");
+    observer.observe(section);
+  });
+}
+
+function setupVLibras() {
+  var wrapper = document.createElement("div");
+  wrapper.setAttribute("vw", "");
+  wrapper.className = "enabled";
+  wrapper.innerHTML =
+    '<div vw-access-button class="active"></div>' +
+    '<div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div>';
+  document.body.appendChild(wrapper);
+
+  var script = document.createElement("script");
+  script.src = "https://vlibras.gov.br/app/vlibras-plugin.js";
+  script.onload = function () {
+    if (window.VLibras) {
+      new window.VLibras.Widget("https://vlibras.gov.br/app");
+    }
+  };
+  document.body.appendChild(script);
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -330,4 +452,6 @@ document.addEventListener("DOMContentLoaded", function () {
   setupFeedbackWidget();
   setupFormEmbed();
   setupParticipantCounter();
+  setupVLibras();
+  setupScrollReveal();
 });
