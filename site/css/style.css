@@ -150,6 +150,12 @@ img {
   background: rgba(255, 255, 255, 0.15);
 }
 
+.exit-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
 .exit-button {
   background: var(--color-alert-dark);
   color: #fff;
@@ -165,6 +171,22 @@ img {
 
 .exit-button:hover {
   background: var(--color-alert-darker);
+}
+
+.exit-info-link {
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  padding: 0.3rem 0.5rem;
+  font-size: 0.9rem;
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.exit-info-link:hover {
+  background: rgba(255, 255, 255, 0.15);
 }
 
 @media (max-width: 780px) {
@@ -306,6 +328,16 @@ code {
   font-size: 0.9em;
 }
 
+kbd {
+  background: #F5F0F8;
+  border: 1px solid var(--color-border);
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  padding: 0.1rem 0.4rem;
+  font-size: 0.85em;
+  font-family: monospace;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -353,6 +385,40 @@ th {
 
 .form-status.error {
   color: var(--color-alert-dark);
+}
+
+/* Participe: contador, formulário e painel institucional */
+.participant-counter {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.4rem 0.9rem;
+  background: #F1E8F7;
+  color: var(--color-primary-dark);
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.form-embed {
+  margin-top: 1rem;
+}
+
+.form-embed iframe {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  display: block;
+}
+
+.institutional-panel {
+  background: #F5F0F8;
+  border: 1px solid var(--color-primary);
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+
+.institutional-panel h2 {
+  margin-top: 0;
+  color: var(--color-primary-dark);
 }
 
 /* Feedback widget */

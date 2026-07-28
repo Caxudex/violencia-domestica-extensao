@@ -37,7 +37,7 @@ O site foi implementado em HTML5, CSS3 e JavaScript puro (sem dependência de ba
 
 Arquivos: `site/index.html` e demais páginas, `site/css/style.css`, `site/js/main.js`.
 
-Foi também criada a página `site/participe.html`, com um formulário (Google Forms embutido) de avaliação da comunidade e registro de participação, para ampliar o alcance do site e servir como evidência da Atividade 31 do edital ("envio de link para a avaliação da comunidade"). O guia de criação do formulário está em `docs/formulario-avaliacao-comunidade.md`.
+Foi também criada a página `site/participe.html`, com um formulário (Google Forms embutido) de avaliação da comunidade e registro de participação, para ampliar o alcance do site e servir como evidência da Atividade 31 do edital ("envio de link para a avaliação da comunidade"). A página distingue duas formas de participação: avaliação anônima e **registro de participação institucional** (nome, instituição/organização e cargo, opcionais), este último pensado como evidência documentável para o relatório apresentado à instituição parceira e à universidade. A página também exibe um contador de participantes (oculto até ser configurado com a planilha real). O guia de criação do formulário está em `docs/formulario-avaliacao-comunidade.md`.
 
 ### Etapa 7 — Verificação e Validação (15h, 5h presenciais)
 As páginas foram verificadas quanto à navegação entre todas as seções, funcionamento do botão de saída rápida, responsividade em diferentes larguras de tela e validação do formulário de contato (campos obrigatórios e formato de e-mail). Todos os requisitos funcionais (RF01–RF08) e não funcionais (RNF01–RNF07) especificados na Etapa 4 foram conferidos item a item.

@@ -61,23 +61,46 @@
     <table>
       <thead><tr><th>Campo</th><th>Tipo</th><th>Obrigatório?</th></tr></thead>
       <tbody>
-        <tr><td>Nome (opcional, para fins de registro de participação)</td><td>Resposta curta</td><td>Não</td></tr>
+        <tr><td>Nome (opcional — preencha se quiser registro formal de participação)</td><td>Resposta curta</td><td>Não</td></tr>
+        <tr><td>Instituição/Organização que você representa (opcional)</td><td>Resposta curta</td><td>Não</td></tr>
+        <tr><td>Cargo/Função (opcional)</td><td>Resposta curta</td><td>Não</td></tr>
         <tr><td>Como você chegou até este site?</td><td>Múltipla escolha</td><td>Não</td></tr>
         <tr><td>As informações do site foram úteis?</td><td>Escala linear (1 a 5)</td><td>Sim</td></tr>
         <tr><td>O site é fácil de navegar e entender?</td><td>Escala linear (1 a 5)</td><td>Sim</td></tr>
         <tr><td>Você conhecia os canais de denúncia (180, 190, 100) antes de visitar o site?</td><td>Sim / Não / Parcialmente</td><td>Não</td></tr>
         <tr><td>Sugestões ou comentários</td><td>Parágrafo</td><td>Não</td></tr>
-        <tr><td>Autorizo o uso desta resposta, de forma anônima, como avaliação da comunidade para fins de atividade extensionista acadêmica</td><td>Caixa de seleção</td><td>Sim</td></tr>
+        <tr><td>Autorizo o uso desta resposta como avaliação da comunidade para fins de atividade extensionista acadêmica (anônima, ou identificada se nome/instituição forem informados)</td><td>Caixa de seleção</td><td>Sim</td></tr>
       </tbody>
     </table>
   </section>
 
   <section>
+    <h2>Registro de Participação Institucional</h2>
+    <p>Os campos "Instituição/Organização" e "Cargo/Função" diferenciam uma resposta <strong>anônima</strong> (mede alcance geral) de uma resposta que vira <strong>evidência formal de participação institucional</strong> — por exemplo, um profissional do CRAS, de uma ONG parceira ou da Polícia Civil/Militar que queira que sua participação conste documentada no relatório apresentado à instituição de ensino e à instituição parceira.</p>
+    <p>Na página <a href="../participe.html">Participe</a>, a seção "Registro de Participação Institucional" explica isso ao visitante antes de preencher o formulário. Como a planilha registra data e hora automaticamente em cada resposta, não é preciso adicionar um campo manual de data.</p>
+    <p>Para gerar a lista de participantes institucionais: abra a planilha de respostas, filtre as linhas em que "Instituição/Organização" não está em branco, e exporte essas linhas (PDF ou CSV) para anexar como evidência.</p>
+  </section>
+
+  <section>
+    <h2>Contador de participantes na página Participe (opcional)</h2>
+    <p>A página Participe tem um contador ("X pessoas já avaliaram o site") que fica <strong>oculto até ser configurado</strong>. Para ativá-lo:</p>
+    <ol>
+      <li>Abra a planilha de respostas (Google Forms → aba Respostas → ícone de planilha).</li>
+      <li>No Sheets: <strong>Arquivo → Compartilhar → Publicar na web</strong>.</li>
+      <li>Selecione a aba de respostas e o formato <strong>CSV</strong>, depois clique em <strong>Publicar</strong>.</li>
+      <li>Copie o link gerado (algo como <code>https://docs.google.com/spreadsheets/d/e/.../pub?output=csv</code>).</li>
+      <li>Em <code>site/participe.html</code>, substitua <code>SUBSTITUA_PELA_URL_CSV_PUBLICADA</code> (atributo <code>data-csv-url</code> do elemento <code>#participant-counter</code>) por esse link.</li>
+    </ol>
+    <p>O contador (em <code>site/js/main.js</code>, função <code>setupParticipantCounter</code>) busca o CSV via <code>fetch</code> e conta as linhas automaticamente. Enquanto o link não for configurado, ele permanece invisível, sem quebrar a página.</p>
+    <div class="notice"><strong>Atenção de privacidade:</strong> publicar a planilha "na web" a torna acessível a qualquer pessoa com o link, incluindo nomes e instituições informados. Se isso for uma preocupação, publique só as colunas de avaliação numa aba separada, ou pule esta funcionalidade — ela é opcional.</div>
+  </section>
+
+  <section>
     <h2>Observação sobre privacidade (LGPD)</h2>
     <ul>
-      <li>Mantenha o campo "Nome" opcional.</li>
+      <li>Mantenha os campos "Nome", "Instituição/Organização" e "Cargo/Função" opcionais.</li>
       <li>Inclua a checkbox de consentimento como campo obrigatório.</li>
-      <li>Nunca publique respostas individuais identificáveis no relatório — reporte apenas dados agregados (ex.: "80% avaliaram o site como muito útil").</li>
+      <li>Nunca publique respostas individuais identificáveis além do que a pessoa explicitamente autorizou — reporte o restante apenas de forma agregada (ex.: "80% avaliaram o site como muito útil").</li>
       <li>Se a instituição parceira solicitar, desative a coleta de e-mails para reforçar o anonimato.</li>
     </ul>
   </section>
@@ -89,7 +112,7 @@
   </section>
 
   <div class="notice">
-    <strong>Pendente:</strong> este guia descreve como criar o formulário, mas ele precisa ser criado manualmente (requer login numa conta Google). Após criá-lo, atualize o <code>&lt;iframe&gt;</code> em <code>site/participe.html</code>, envie o link direto na Atividade 31 do AVA, marque o item como concluído no <a href="checklist-atividades.html">Checklist das 31 Atividades</a> e, opcionalmente, conecte o widget de avaliação rápida ao formulário real.
+    <strong>Pendente:</strong> este guia descreve como criar o formulário, mas ele precisa ser criado manualmente (requer login numa conta Google). Após criá-lo: atualize o <code>&lt;iframe&gt;</code> em <code>site/participe.html</code>; envie o link direto na Atividade 31 do AVA; marque o item como concluído no <a href="checklist-atividades.html">Checklist das 31 Atividades</a>; opcionalmente, configure o contador de participantes e conecte o widget de avaliação rápida ao formulário real; e, quando houver respostas com instituição preenchida, exporte a lista de participação institucional para o relatório.
   </div>
 </main>
 

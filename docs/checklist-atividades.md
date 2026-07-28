@@ -36,7 +36,7 @@ Legenda: ✅ Pronto neste repositório · ⚠️ Requer ação pessoal do estuda
 | 28 | Ajustes Finais — Validação pós ajustes (presencial) | `docs/relatorio-final.md`, seção "Etapa 8" | ⚠️ Validar com a instituição real |
 | 29 | Escrita do Relatório — Desenvolvimento | `docs/relatorio-final.md`, `docs/paper-academico.md` | ✅ |
 | 30 | Escrita do Relatório — Apresentação (presencial) | Apresentação à instituição parceira | ⚠️ Agendar apresentação real |
-| 31 | **Registro de frequência**, registros fotográficos, comprovação no AVA, autoavaliação, link de avaliação da comunidade | `docs/ficha-de-frequencia.md` (modelo). Link de avaliação: formulário embutido em `site/participe.html`, criado a partir de `docs/formulario-avaliacao-comunidade.md` | ⚠️ Registro de frequência, fotos e autoavaliação: preencher e enviar pessoalmente. Link de avaliação da comunidade: criar o Google Form real seguindo o guia e colar o link no AVA |
+| 31 | **Registro de frequência**, registros fotográficos, comprovação no AVA, autoavaliação, link de avaliação da comunidade | `docs/ficha-de-frequencia.md` (modelo). Link de avaliação + registro de participação institucional: formulário embutido em `site/participe.html`, criado a partir de `docs/formulario-avaliacao-comunidade.md` | ⚠️ Registro de frequência, fotos e autoavaliação: preencher e enviar pessoalmente. Link de avaliação da comunidade: criar o Google Form real seguindo o guia e colar o link no AVA |
 
 ## Documentos obrigatórios (conforme edital)
 
@@ -51,4 +51,6 @@ Os dois documentos que a instituição concedente deve fornecer/assinar para com
 3. Preencher e assinar o **Registro de Frequência** (`docs/ficha-de-frequencia.md`, ou a ficha oficial da instituição de ensino).
 4. Aplicar o [Google Form de levantamento](https://docs.google.com/forms/d/e/1FAIpQLSfA6eaO5LOXyTP2DMPiCTXPM-f6n1N9j48hNhtiEX1L6mhgHg/viewform) nos grupos focais reais com ONGs, Polícia Civil e Militar (Etapa 2), e atualizar `docs/02-levantamento-informacoes.md` com as respostas reais coletadas.
 5. Criar o Google Form de avaliação da comunidade (guia em `docs/formulario-avaliacao-comunidade.md` — distinto do formulário da Etapa 2), colar o embed em `site/participe.html`, preencher a autoavaliação e enviar o link de avaliação da comunidade no Ambiente Virtual de Aprendizagem.
-6. Agendar e realizar a apresentação presencial do relatório (Atividade 30).
+6. Depois de coletar respostas com instituição preenchida, exportar a lista de participação institucional (nome, instituição, cargo, data) da planilha do Google Forms para anexar como evidência no relatório apresentado à instituição parceira e à universidade.
+7. (Opcional) Publicar a planilha como CSV e configurar o contador de participantes em `site/participe.html` (`data-csv-url`).
+8. Agendar e realizar a apresentação presencial do relatório (Atividade 30).

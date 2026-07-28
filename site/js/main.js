@@ -1,11 +1,44 @@
+// Caminho relativo para páginas em site/documentos/, que ficam um nível abaixo.
+function getBasePrefix() {
+  return window.location.pathname.indexOf("/documentos/") !== -1 ? "../" : "";
+}
+
 // Botão de saída rápida: redireciona imediatamente e substitui a entrada
 // no histórico para reduzir o risco de a página ser reaberta com "voltar".
+// Também é retirado do menu mobile (que fica escondido por padrão) e
+// colocado direto no cabeçalho, para nunca ficar oculto atrás do "☰ Menu",
+// além de ganhar um atalho de teclado (Esc) para não depender de mirar no botão.
 function setupExitButton() {
-  var exitButtons = document.querySelectorAll(".exit-button");
-  exitButtons.forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      window.location.replace("https://www.google.com");
-    });
+  var headerInner = document.querySelector(".header-inner");
+  var navToggle = document.querySelector(".nav-toggle");
+  var exitBtn = document.querySelector(".exit-button");
+  if (!exitBtn) return;
+
+  if (headerInner && navToggle && exitBtn.parentElement !== headerInner) {
+    var wrapper = document.createElement("div");
+    wrapper.className = "exit-wrapper";
+    wrapper.appendChild(exitBtn);
+
+    var infoLink = document.createElement("a");
+    infoLink.className = "exit-info-link";
+    infoLink.href = getBasePrefix() + "seguranca-digital.html";
+    infoLink.textContent = "ⓘ";
+    infoLink.setAttribute("aria-label", "O que o botão de saída faz (e não faz) — dicas de segurança digital");
+    wrapper.appendChild(infoLink);
+
+    headerInner.insertBefore(wrapper, navToggle);
+  }
+
+  function exit() {
+    window.location.replace("https://www.google.com");
+  }
+
+  exitBtn.addEventListener("click", exit);
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+      exit();
+    }
   });
 }
 
@@ -89,6 +122,37 @@ function setupFontSizeControl() {
 // Widget de avaliação rápida ("Esta informação foi útil?"), exibido apenas
 // nas páginas de conteúdo (não na Home, Contato, Participe ou Documentação,
 // que já têm seus próprios mecanismos de feedback/avaliação).
+// Contador de participantes na página Participe: lê a contagem de respostas
+// a partir de uma planilha do Google Sheets publicada na web como CSV
+// (vinculada ao formulário de avaliação). Enquanto o link não for
+// configurado (ver docs/formulario-avaliacao-comunidade.md), o elemento
+// fica oculto — nada quebra por causa disso.
+function setupParticipantCounter() {
+  var el = document.querySelector("#participant-counter");
+  if (!el) return;
+  var csvUrl = el.getAttribute("data-csv-url");
+  if (!csvUrl || csvUrl.indexOf("SUBSTITUA") !== -1) return;
+
+  fetch(csvUrl)
+    .then(function (response) {
+      if (!response.ok) throw new Error("Falha ao carregar contagem");
+      return response.text();
+    })
+    .then(function (text) {
+      var lines = text.trim().split("\n").filter(function (line) {
+        return line.trim().length > 0;
+      });
+      var count = Math.max(0, lines.length - 1); // desconta a linha de cabeçalho
+      el.textContent = count === 1
+        ? "1 pessoa já avaliou o site"
+        : count + " pessoas já avaliaram o site";
+      el.hidden = false;
+    })
+    .catch(function () {
+      el.hidden = true;
+    });
+}
+
 function setupFeedbackWidget() {
   var CONTENT_PAGES = [
     "sobre.html",
@@ -173,4 +237,5 @@ document.addEventListener("DOMContentLoaded", function () {
   setupFontSizeControl();
   setupContactForm();
   setupFeedbackWidget();
+  setupParticipantCounter();
 });
