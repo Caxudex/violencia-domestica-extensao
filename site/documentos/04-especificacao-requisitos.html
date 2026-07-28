@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Etapa 4 — Especificação de Requisitos — CRAS Novo Amanhã</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="../index.html">CRAS Novo Amanhã</a>
+    <button class="nav-toggle" aria-expanded="false" aria-label="Abrir menu">☰ Menu</button>
+    <nav class="main-nav" aria-label="Navegação principal">
+      <a href="../index.html">Home</a>
+      <a href="../sobre.html">Sobre</a>
+      <a href="../tipos-de-violencia.html">Tipos de Violência</a>
+      <a href="../legislacao.html">Legislação</a>
+      <a href="../como-denunciar.html">Como Denunciar</a>
+      <a href="../rede-de-apoio.html">Rede de Apoio</a>
+      <a href="../contato.html">Contato</a>
+      <a href="../participe.html">Participe</a>
+      <a href="../documentacao-extensao.html" aria-current="page">Documentação</a>
+      <button class="exit-button" type="button">Sair rapidamente</button>
+    </nav>
+  </div>
+</header>
+
+<main id="conteudo">
+  <p><a href="../documentacao-extensao.html">&larr; Voltar para Documentação</a></p>
+
+  <section class="hero">
+    <h1>Etapa 4 — Especificação de Requisitos</h1>
+    <p>Definir de forma clara e verificável os requisitos funcionais (RF) e não funcionais (RNF) do site, com base nas necessidades levantadas na Etapa 2 e nos wireframes da Etapa 3.</p>
+  </section>
+
+  <section>
+    <h2>Requisitos Funcionais (RF)</h2>
+    <table>
+      <thead><tr><th>ID</th><th>Requisito</th></tr></thead>
+      <tbody>
+        <tr><td>RF01</td><td>O site deve exibir, em toda página, um botão de "Sair rapidamente" que redirecione imediatamente para um site neutro (ex.: Google), sem manter histórico de navegação recuperável na mesma aba.</td></tr>
+        <tr><td>RF02</td><td>A Home deve exibir com destaque os canais de denúncia: Disque 180, 190 e Ligue 100.</td></tr>
+        <tr><td>RF03</td><td>O site deve conter uma página explicando os cinco tipos de violência doméstica e uma seção específica sobre violência contra crianças e adolescentes.</td></tr>
+        <tr><td>RF04</td><td>O site deve conter uma página de legislação com resumo da Lei Maria da Penha e da Política Nacional, com links para os textos oficiais.</td></tr>
+        <tr><td>RF05</td><td>O site deve conter uma página "Como Denunciar" com canais oficiais e passo a passo para solicitação de medida protetiva.</td></tr>
+        <tr><td>RF06</td><td>O site deve conter uma página "Rede de Apoio" listando CRAS, CREAS, ONGs parceiras e a Casa da Mulher Brasileira.</td></tr>
+        <tr><td>RF07</td><td>O site deve conter um formulário de contato com validação client-side, exibindo aviso de que não substitui atendimento de emergência.</td></tr>
+        <tr><td>RF08</td><td>A navegação principal deve estar acessível a partir de qualquer página do site (header fixo).</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Requisitos Não Funcionais (RNF)</h2>
+    <table>
+      <thead><tr><th>ID</th><th>Requisito</th></tr></thead>
+      <tbody>
+        <tr><td>RNF01</td><td>O site deve ser responsivo, adaptando-se a telas mobile, tablet e desktop.</td></tr>
+        <tr><td>RNF02</td><td>O site deve manter contraste de cores adequado (mínimo AA de WCAG) entre texto e fundo.</td></tr>
+        <tr><td>RNF03</td><td>Todos os elementos interativos devem ser navegáveis via teclado, com foco visível.</td></tr>
+        <tr><td>RNF04</td><td>O site não deve realizar coleta de dados sensíveis sem consentimento explícito do usuário.</td></tr>
+        <tr><td>RNF05</td><td>O site deve ser implementado em HTML/CSS/JS estático, sem dependência de backend.</td></tr>
+        <tr><td>RNF06</td><td>O tempo de carregamento de qualquer página deve ser mínimo, evitando bibliotecas externas pesadas.</td></tr>
+        <tr><td>RNF07</td><td>O código-fonte deve ser entregue de forma organizada e documentada (README).</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Rastreabilidade com a Etapa 2</h2>
+    <table>
+      <thead><tr><th>Necessidade (Etapa 2)</th><th>Requisito(s) correspondente(s)</th></tr></thead>
+      <tbody>
+        <tr><td>Botão de saída rápida</td><td>RF01</td></tr>
+        <tr><td>Canais de denúncia em destaque</td><td>RF02, RF05</td></tr>
+        <tr><td>Explicação acessível dos tipos de violência</td><td>RF03</td></tr>
+        <tr><td>Medidas protetivas e legislação</td><td>RF04, RF05</td></tr>
+        <tr><td>Rede de apoio</td><td>RF06</td></tr>
+        <tr><td>Contato simples, sem dados sensíveis</td><td>RF07, RNF04</td></tr>
+        <tr><td>Acessibilidade e responsividade</td><td>RNF01, RNF02, RNF03</td></tr>
+      </tbody>
+    </table>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>&copy; 2026 Projeto de Extensão — Enfrentamento à Violência Doméstica</span>
+    <span>Parceria: CRAS Novo Amanhã</span>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
