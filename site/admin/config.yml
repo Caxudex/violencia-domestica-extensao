@@ -48,3 +48,11 @@ collections:
           - { label: "Descrição do Disque 180", name: "emergencia180Desc", widget: "string" }
           - { label: "Descrição da Emergência policial (190)", name: "emergencia190Desc", widget: "string" }
           - { label: "Descrição do Ligue 100", name: "emergencia100Desc", widget: "string" }
+          - { label: "Card \"Tipos de Violência\" na Home", name: "cardTiposViolenciaTexto", widget: "string" }
+          - { label: "Card \"Legislação\" na Home", name: "cardLegislacaoTexto", widget: "string" }
+          - { label: "Card \"Rede de Apoio\" na Home", name: "cardRedeApoioTexto", widget: "string" }
+          - { label: "Texto \"Sobre o projeto\" no rodapé (todas as páginas)", name: "footerSobreTexto", widget: "text" }
+          - { label: "Título do hero da página Participe", name: "participeHeroTitulo", widget: "string" }
+          - { label: "Texto do hero da página Participe", name: "participeHeroTexto", widget: "text" }
+          - { label: "Registro Institucional (Participe) - parágrafo 1", name: "participeInstitucionalTexto1", widget: "text" }
+          - { label: "Registro Institucional (Participe) - parágrafo 2", name: "participeInstitucionalTexto2", widget: "text" }

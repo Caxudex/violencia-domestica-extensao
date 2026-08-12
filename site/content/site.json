@@ -3,5 +3,13 @@
   "homeHeroTexto": "Este site reúne informações sobre os tipos de violência doméstica, a legislação vigente, canais oficiais de denúncia e a rede de apoio disponível, desenvolvido com a Secretaria de Assistência Social de Timbó como instituição de referência.",
   "emergencia180Desc": "Central de Atendimento à Mulher. Orientação e denúncia, 24h.",
   "emergencia190Desc": "Risco imediato à vida. Acione a polícia.",
-  "emergencia100Desc": "Direitos Humanos - denúncias de violência contra crianças, adolescentes e outros grupos vulneráveis."
+  "emergencia100Desc": "Direitos Humanos - denúncias de violência contra crianças, adolescentes e outros grupos vulneráveis.",
+  "cardTiposViolenciaTexto": "Entenda as formas de violência física, psicológica, sexual, econômica e patrimonial.",
+  "cardLegislacaoTexto": "Conheça a Lei Maria da Penha e a Política Nacional de Enfrentamento à Violência.",
+  "cardRedeApoioTexto": "CRAS, CREAS, ONGs e a Casa da Mulher Brasileira perto de você.",
+  "footerSobreTexto": "Site de conscientização e combate à violência doméstica, desenvolvido como atividade de extensão universitária.",
+  "participeHeroTitulo": "Participe e Avalie",
+  "participeHeroTexto": "Este site é fruto de um projeto de extensão universitária de conscientização e combate à violência doméstica. Sua opinião ajuda a medir o alcance do projeto e a melhorar o conteúdo para quem mais precisa.",
+  "participeInstitucionalTexto1": "Você representa uma instituição (CRAS, CREAS, ONG, órgão público, universidade)? Ao preencher os campos opcionais de nome e instituição/organização dentro do formulário acima, sua participação passa a constar formalmente na planilha de respostas - com data e hora registradas automaticamente - servindo como evidência documentável para o relatório apresentado à instituição parceira e à universidade.",
+  "participeInstitucionalTexto2": "Se preferir manter sua resposta anônima, é só deixar esses campos em branco - nenhum dado de identificação é obrigatório."
 }
