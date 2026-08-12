@@ -1,5 +1,20 @@
 # Painel Administrativo (Decap CMS)
 
+## Status
+
+✅ **Configurado e testado de ponta a ponta** (12/08/2026): login via GitHub OAuth funcionando, edição publicada gerou commit real no repositório (`68ba6d7`, corrigido em seguida por `18d0e81`), e o arquivo `site/content/institution.json` atualizou corretamente. Acesso: `https://caxudex.github.io/violencia-domestica-extensao/admin/`.
+
+## Por que o escopo é só os dados da instituição (e não o site inteiro)
+
+O edital não exige um CMS completo — ele só pede para "desenvolver o site" (WordPress é citado como exemplo de ferramenta possível, não obrigação; ver justificativa da escolha tecnológica em `docs/relatorio-final.md`, Etapa 6) e, na entrega (Etapa 8), passar o código-fonte com orientações básicas de manutenção. Dentro disso, o painel foi escopado deliberadamente para os **dados institucionais** (nome, endereço, telefone, e-mail, horário, status da parceria, texto sobre a parceria), porque são exatamente os dados que:
+
+- **Mudam de verdade** ao longo do tempo (telefone, endereço, situação da parceria).
+- **São críticos de estarem certos** — um contato errado numa página de apoio a vítimas de violência doméstica é um risco real, não só estético.
+
+Conteúdo normativo (Legislação, Tipos de Violência, Como Denunciar) fica **fora** do painel de propósito: é referência legal (Lei Maria da Penha, ECA etc.) que não deveria ser editável livremente sem revisão — um erro ali é risco jurídico/de informação. Esse conteúdo continua sob controle de código, revisado como qualquer outra mudança no repositório.
+
+O padrão (`data-institution="campo"` + `site/content/*.json` + coleção em `config.yml`) é reaproveitável caso surja necessidade real de tornar mais algum campo editável (ver "Ampliando o que é editável" abaixo) — não é preciso redesenhar nada, só estender.
+
 ## Por que Decap CMS em vez de WordPress
 
 O edital cita o WordPress apenas como exemplo ("pode-se utilizar do CMS WordPress ou desenvolver com base em outra tecnologia que se sinta à vontade"). Como o site é estático (RNF05, `docs/04-especificacao-requisitos.md`), o Decap CMS foi escolhido porque:
@@ -19,9 +34,9 @@ O edital cita o WordPress apenas como exemplo ("pode-se utilizar do CMS WordPres
 - `site/content/institution.json` — os dados que o painel edita: nome da instituição, nome curto, endereço, telefone, e-mail, horário e o texto sobre a parceria.
 - `site/js/main.js` (função `setupInstitutionContent`) — todas as páginas leem esse JSON e atualizam automaticamente a barra do topo, o rodapé, e as páginas Contato e Sobre. Os valores reais também já estão escritos direto no HTML como reserva, então o site funciona normalmente mesmo se esse arquivo falhar ao carregar.
 
-## Passo a passo (só quem tem acesso às contas pode fazer)
+## Passo a passo (concluído — mantido como referência)
 
-O projeto Netlify `incomparable-toffee-9df996` já foi criado e conectado ao GitHub. Falta:
+O projeto Netlify `incomparable-toffee-9df996` já foi criado e conectado ao GitHub, e todos os passos abaixo já foram concluídos e testados. Fica documentado caso seja preciso recriar o login em outro projeto/domínio no futuro.
 
 1. **Corrigir o "Publish directory"** — hoje a raiz do site Netlify está dando 404. Vá em Project configuration → Build & deploy → Continuous deployment (ou "Build settings") → confira/edite o campo **"Publish directory"** para `site` → salve → em "Deploys", clique em "Trigger deploy" → "Deploy site". Depois disso, `https://incomparable-toffee-9df996.netlify.app/` deve mostrar a Home do site normalmente.
 
