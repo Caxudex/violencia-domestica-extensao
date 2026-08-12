@@ -4,10 +4,10 @@ Scripts para rodar o site localmente sem precisar decorar comandos.
 
 ## Como usar
 
-**Opção 1 — duplo clique (mais simples):**
+**Opção 1 - duplo clique (mais simples):**
 Dê duplo clique em `iniciar-site.bat`. Uma janela abrirá o site em `http://localhost:8000` no navegador padrão.
 
-**Opção 2 — PowerShell:**
+**Opção 2 - PowerShell:**
 ```powershell
 .\scripts\iniciar-site.ps1
 ```

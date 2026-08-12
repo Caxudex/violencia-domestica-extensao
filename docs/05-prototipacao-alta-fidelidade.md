@@ -1,4 +1,4 @@
-# Etapa 5 — Prototipação de Alta Fidelidade
+# Etapa 5 - Prototipação de Alta Fidelidade
 
 ## Objetivo da etapa
 Definir as decisões finais de design visual que servem de base direta para a implementação (Etapa 6): paleta de cores, tipografia e especificação dos componentes de interface.
@@ -19,7 +19,7 @@ Paleta escolhida por transmitir acolhimento (roxo é a cor símbolo do combate �
 
 ## Tipografia
 
-- Fonte: system font stack (`-apple-system, Segoe UI, Roboto, sans-serif`) — evita dependência de fontes externas (RNF06) e garante legibilidade em qualquer dispositivo.
+- Fonte: system font stack (`-apple-system, Segoe UI, Roboto, sans-serif`) - evita dependência de fontes externas (RNF06) e garante legibilidade em qualquer dispositivo.
 - Tamanho base: 16px, com opção de aumento (`+A` / `-A`, opcional em versão futura).
 - Títulos: peso 700, texto corrido: peso 400.
 

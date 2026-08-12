@@ -1,13 +1,13 @@
-# Etapa 3 — Prototipação de Baixa Fidelidade
+# Etapa 3 - Prototipação de Baixa Fidelidade
 
 ## Objetivo da etapa
 Traduzir as necessidades levantadas na Etapa 2 em wireframes simples (esboços) que definam a disposição dos elementos em cada página, antes de qualquer refinamento visual.
 
-## Elemento transversal — Header (presente em todas as páginas)
+## Elemento transversal - Header (presente em todas as páginas)
 
 ```
 +--------------------------------------------------------------+
-| [Logo: Prefeitura Municipal de Indaial]   Home Sobre Tipos Legislação        |
+| [Logo: Secretaria de Assistência Social de Timbó]   Home Sobre Tipos Legislação        |
 |                             Denúncia Rede Contato             |
 |                                          [ SAIR RAPIDAMENTE ] |
 +--------------------------------------------------------------+
@@ -41,7 +41,7 @@ O botão "SAIR RAPIDAMENTE" fica sempre visível e com destaque visual (cor de a
 | HEADER                                                        |
 +--------------------------------------------------------------+
 | Texto: objetivo do projeto de extensão                        |
-| Texto: parceria com Prefeitura Municipal de Indaial                           |
+| Texto: parceria com Secretaria de Assistência Social de Timbó                           |
 +--------------------------------------------------------------+
 | FOOTER                                                         |
 +--------------------------------------------------------------+

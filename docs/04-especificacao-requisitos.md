@@ -1,4 +1,4 @@
-# Etapa 4 — Especificação de Requisitos
+# Etapa 4 - Especificação de Requisitos
 
 ## Objetivo da etapa
 Definir de forma clara e verificável os requisitos funcionais (RF) e não funcionais (RNF) do site, com base nas necessidades levantadas na Etapa 2 e nos wireframes da Etapa 3.

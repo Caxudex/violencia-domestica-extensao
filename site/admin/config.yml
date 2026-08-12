@@ -1,0 +1,80 @@
+backend:
+  name: github
+  repo: Caxudex/violencia-domestica-extensao
+  branch: main
+  # URL do site Netlify que hospeda as funções de login (netlify/functions/).
+  base_url: https://incomparable-toffee-9df996.netlify.app
+  auth_endpoint: auth
+
+media_folder: "site/assets"
+public_folder: "/assets"
+
+site_url: https://caxudex.github.io/violencia-domestica-extensao/
+display_url: https://caxudex.github.io/violencia-domestica-extensao/
+logo_url: /favicon.svg
+
+locale: "pt"
+
+collections:
+  - name: "institution"
+    label: "Instituição parceira"
+    description: "Dados de contato e do status da parceria, usados no rodapé, na barra do topo e nas páginas Contato e Sobre de todo o site."
+    files:
+      - name: "dados"
+        label: "Dados de contato e parceria"
+        file: "site/content/institution.json"
+        fields:
+          - { label: "Nome completo da instituição", name: "nome", widget: "string" }
+          - { label: "Nome curto (ex.: CREAS de Timbó)", name: "nomeCurto", widget: "string" }
+          - { label: "Linha \"Instituição\" na página Contato", name: "instituicaoLinha", widget: "string" }
+          - { label: "Endereço", name: "endereco", widget: "string" }
+          - { label: "Telefone (como aparece escrito)", name: "telefone", widget: "string" }
+          - { label: "Telefone (só números, com código do país, para o link de discagem)", name: "telefoneLink", widget: "string", pattern: ["^\\+?[0-9]+$", "Use só números, com código do país. Ex.: +554733823655"] }
+          - { label: "E-mail", name: "email", widget: "string" }
+          - { label: "Horário de atendimento", name: "horario", widget: "string" }
+          - { label: "Situação da parceria (aparece no rodapé)", name: "statusParceria", widget: "string" }
+          - { label: "Texto sobre a parceria (página Sobre)", name: "textoParceria", widget: "text" }
+
+  - name: "site"
+    label: "Conteúdo geral do site"
+    description: "Textos de baixo risco que mudam com alguma frequência: heróis de todas as páginas, cards descritivos e o rodapé. Os números de emergência (180/190/100) em si e o conteúdo normativo (leis, definições legais de tipos de violência, passo a passo de medida protetiva) NÃO ficam aqui de propósito - exigem revisão de código."
+    files:
+      - name: "dados"
+        label: "Textos gerais do site"
+        file: "site/content/site.json"
+        fields:
+          - { label: "Título do hero da Home", name: "homeHeroTitulo", widget: "string" }
+          - { label: "Texto do hero da Home", name: "homeHeroTexto", widget: "text" }
+          - { label: "Descrição do Disque 180", name: "emergencia180Desc", widget: "string" }
+          - { label: "Descrição da Emergência policial (190)", name: "emergencia190Desc", widget: "string" }
+          - { label: "Descrição do Ligue 100", name: "emergencia100Desc", widget: "string" }
+          - { label: "Card \"Tipos de Violência\" na Home", name: "cardTiposViolenciaTexto", widget: "string" }
+          - { label: "Card \"Legislação\" na Home", name: "cardLegislacaoTexto", widget: "string" }
+          - { label: "Card \"Rede de Apoio\" na Home", name: "cardRedeApoioTexto", widget: "string" }
+          - { label: "Texto \"Sobre o projeto\" no rodapé (todas as páginas)", name: "footerSobreTexto", widget: "text" }
+          - { label: "Título do hero da página Participe", name: "participeHeroTitulo", widget: "string" }
+          - { label: "Texto do hero da página Participe", name: "participeHeroTexto", widget: "text" }
+          - { label: "Registro Institucional (Participe) - parágrafo 1", name: "participeInstitucionalTexto1", widget: "text" }
+          - { label: "Registro Institucional (Participe) - parágrafo 2", name: "participeInstitucionalTexto2", widget: "text" }
+          - { label: "Participe - card \"Compartilhe\"", name: "participeCardCompartilharTexto", widget: "string" }
+          - { label: "Participe - card \"Conheça a rede de apoio\"", name: "participeCardRedeApoioTexto", widget: "string" }
+          - { label: "Participe - card \"Fale com a instituição\"", name: "participeCardContatoTexto", widget: "string" }
+          - { label: "Sobre - título do hero", name: "sobreHeroTitulo", widget: "string" }
+          - { label: "Sobre - texto do hero", name: "sobreHeroTexto", widget: "text" }
+          - { label: "Sobre - texto do Objetivo", name: "sobreObjetivoTexto", widget: "text" }
+          - { label: "Tipos de Violência - título do hero", name: "tiposViolenciaHeroTitulo", widget: "string" }
+          - { label: "Tipos de Violência - texto do hero", name: "tiposViolenciaHeroTexto", widget: "text" }
+          - { label: "Legislação - título do hero", name: "legislacaoHeroTitulo", widget: "string" }
+          - { label: "Legislação - texto do hero", name: "legislacaoHeroTexto", widget: "text" }
+          - { label: "Como Denunciar - título do hero", name: "comoDenunciarHeroTitulo", widget: "string" }
+          - { label: "Como Denunciar - texto do hero", name: "comoDenunciarHeroTexto", widget: "text" }
+          - { label: "Como Denunciar - descrição do Disque 180", name: "comoDenunciarEmergencia180Desc", widget: "string" }
+          - { label: "Como Denunciar - descrição da Emergência policial (190)", name: "comoDenunciarEmergencia190Desc", widget: "string" }
+          - { label: "Como Denunciar - descrição do Ligue 100", name: "comoDenunciarEmergencia100Desc", widget: "string" }
+          - { label: "Como Denunciar - card \"Delegacia da Mulher\"", name: "comoDenunciarDelegaciaTexto", widget: "string" }
+          - { label: "Rede de Apoio - título do hero", name: "redeApoioHeroTitulo", widget: "string" }
+          - { label: "Rede de Apoio - texto do hero", name: "redeApoioHeroTexto", widget: "text" }
+          - { label: "Rede de Apoio - card \"ONGs parceiras\"", name: "redeApoioOngsTexto", widget: "text" }
+          - { label: "Rede de Apoio - card \"Casa da Mulher Brasileira\"", name: "redeApoioCasaMulherTexto", widget: "text" }
+          - { label: "Página não encontrada (404) - título", name: "notFoundHeroTitulo", widget: "string" }
+          - { label: "Página não encontrada (404) - texto", name: "notFoundHeroTexto", widget: "text" }

@@ -1,18 +1,18 @@
-# Etapa 2 — Levantamento de Informações
+# Etapa 2 - Levantamento de Informações
 
 ## Objetivo da etapa
-Avaliar e analisar, em conjunto com profissionais especialistas (perfil de assistente social do CRAS), quais informações e funcionalidades o site precisa oferecer para efetivamente apoiar vítimas de violência doméstica e a comunidade em geral.
+Avaliar e analisar, em conjunto com profissionais especialistas (perfil de assistente social do CREAS - órgão responsável pela proteção social especial, que trata casos de violação de direitos como a violência doméstica), quais informações e funcionalidades o site precisa oferecer para efetivamente apoiar vítimas de violência doméstica e a comunidade em geral.
 
 ## Instrumento de coleta de dados
 
 Conforme sugerido pelo edital ("Ferramentas de coleta de dados: Google Forms ou editor de texto"), o levantamento utiliza um **Google Forms real** aplicado durante os grupos focais presenciais:
 
-- **Formulário:** [Levantamento de Informações — Etapa 2](https://docs.google.com/forms/d/e/1FAIpQLSfA6eaO5LOXyTP2DMPiCTXPM-f6n1N9j48hNhtiEX1L6mhgHg/viewform)
+- **Formulário:** [Levantamento de Informações - Etapa 2](https://docs.google.com/forms/d/e/1FAIpQLSfA6eaO5LOXyTP2DMPiCTXPM-f6n1N9j48hNhtiEX1L6mhgHg/viewform)
 
 Este é o mesmo formulário usado nas reuniões presenciais com os grupos focais (Etapa 2), preenchido pelos próprios participantes ou pelo estudante durante a entrevista.
 
 ## Método
-Grupos focais presenciais com membros de ONGs, Polícia Civil e Militar, além de profissionais do CRAS (10 horas presenciais, conforme cronograma), utilizando o formulário acima como instrumento estruturado de coleta. As respostas ficam organizadas automaticamente numa planilha Google Sheets vinculada ao formulário, que pode ser anexada como evidência no relatório final.
+Grupos focais presenciais com membros de ONGs, Polícia Civil e Militar, além de profissionais do CREAS (10 horas presenciais, conforme cronograma), utilizando o formulário acima como instrumento estruturado de coleta. As respostas ficam organizadas automaticamente numa planilha Google Sheets vinculada ao formulário, que pode ser anexada como evidência no relatório final.
 
 ## Roteiro de entrevista e síntese das respostas
 
@@ -25,7 +25,7 @@ Grupos focais presenciais com membros de ONGs, Polícia Civil e Militar, além d
 > Números de emergência (180, 190, 100), o que é uma medida protetiva e como solicitá-la, e a rede de apoio local (CRAS, CREAS, Casa da Mulher Brasileira).
 
 **3. Existe alguma preocupação de segurança digital ao acessar esse tipo de site?**
-> Sim — muitas vítimas têm o celular monitorado pelo agressor. É recomendado um mecanismo de saída rápida da página (redirecionamento imediato para um site neutro) e evitar que o histórico do navegador exponha a vítima.
+> Sim - muitas vítimas têm o celular monitorado pelo agressor. É recomendado um mecanismo de saída rápida da página (redirecionamento imediato para um site neutro) e evitar que o histórico do navegador exponha a vítima.
 
 **4. Que linguagem e tom o conteúdo deve ter?**
 > Acolhedor, direto, sem jargão jurídico excessivo; texto em linguagem simples, com opção de aumentar o tamanho da fonte para acessibilidade.
