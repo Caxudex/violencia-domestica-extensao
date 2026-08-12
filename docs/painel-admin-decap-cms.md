@@ -4,16 +4,23 @@
 
 ✅ **Configurado e testado de ponta a ponta** (12/08/2026): login via GitHub OAuth funcionando, edição publicada gerou commit real no repositório (`68ba6d7`, corrigido em seguida por `18d0e81`), e o arquivo `site/content/institution.json` atualizou corretamente. Acesso: `https://caxudex.github.io/violencia-domestica-extensao/admin/`.
 
-## Por que o escopo é só os dados da instituição (e não o site inteiro)
+Escopo ampliado no mesmo dia com a coleção "Conteúdo geral do site" (`site/content/site.json`: hero da Home + descrições dos números de emergência), usando o mesmo mecanismo já testado.
 
-O edital não exige um CMS completo — ele só pede para "desenvolver o site" (WordPress é citado como exemplo de ferramenta possível, não obrigação; ver justificativa da escolha tecnológica em `docs/relatorio-final.md`, Etapa 6) e, na entrega (Etapa 8), passar o código-fonte com orientações básicas de manutenção. Dentro disso, o painel foi escopado deliberadamente para os **dados institucionais** (nome, endereço, telefone, e-mail, horário, status da parceria, texto sobre a parceria), porque são exatamente os dados que:
+## Por que o escopo é limitado (e não o site inteiro)
 
-- **Mudam de verdade** ao longo do tempo (telefone, endereço, situação da parceria).
-- **São críticos de estarem certos** — um contato errado numa página de apoio a vítimas de violência doméstica é um risco real, não só estético.
+O edital não exige um CMS completo — ele só pede para "desenvolver o site" (WordPress é citado como exemplo de ferramenta possível, não obrigação; ver justificativa da escolha tecnológica em `docs/relatorio-final.md`, Etapa 6) e, na entrega (Etapa 8), passar o código-fonte com orientações básicas de manutenção. Dentro disso, o painel cobre duas coleções, escolhidas pelo mesmo critério:
 
-Conteúdo normativo (Legislação, Tipos de Violência, Como Denunciar) fica **fora** do painel de propósito: é referência legal (Lei Maria da Penha, ECA etc.) que não deveria ser editável livremente sem revisão — um erro ali é risco jurídico/de informação. Esse conteúdo continua sob controle de código, revisado como qualquer outra mudança no repositório.
+- **Instituição parceira** (`site/content/institution.json`): nome, endereço, telefone, e-mail, horário, status da parceria, texto sobre a parceria.
+- **Conteúdo geral do site** (`site/content/site.json`): título/texto do hero da Home e as descrições (não os números) do Disque 180/190/Ligue 100.
 
-O padrão (`data-institution="campo"` + `site/content/*.json` + coleção em `config.yml`) é reaproveitável caso surja necessidade real de tornar mais algum campo editável (ver "Ampliando o que é editável" abaixo) — não é preciso redesenhar nada, só estender.
+Ambas reúnem dados que:
+
+- **Mudam de verdade** ao longo do tempo (telefone, endereço, situação da parceria, texto de apresentação).
+- **São de baixo risco ou críticos de estarem certos** — um contato errado numa página de apoio a vítimas de violência doméstica é um risco real, não só estético; já o texto do hero é só apresentação, sem carga normativa.
+
+Conteúdo normativo (Legislação, Tipos de Violência, Como Denunciar, e os **números** de emergência em si) fica **fora** do painel de propósito: é referência legal (Lei Maria da Penha, ECA etc.) ou informação de segurança que não deveria ser editável livremente sem revisão — um erro ali é risco jurídico/de informação. Esse conteúdo continua sob controle de código, revisado como qualquer outra mudança no repositório.
+
+O padrão (`data-institution="campo"` / `data-site="campo"` + `site/content/*.json` + coleção em `config.yml`) é reaproveitável caso surja necessidade real de tornar mais algum campo editável — não é preciso redesenhar nada, só estender (ver "Ampliando o que é editável" abaixo).
 
 ## Por que Decap CMS em vez de WordPress
 
@@ -32,7 +39,8 @@ O edital cita o WordPress apenas como exemplo ("pode-se utilizar do CMS WordPres
 - `netlify/functions/auth.js` e `netlify/functions/callback.js` — implementam a troca de login com o GitHub (protocolo padrão do Decap CMS para "Custom OAuth Client").
 - `netlify.toml` — publica a pasta `site/` e expõe essas funções nas rotas `/auth` e `/callback`.
 - `site/content/institution.json` — os dados que o painel edita: nome da instituição, nome curto, endereço, telefone, e-mail, horário e o texto sobre a parceria.
-- `site/js/main.js` (função `setupInstitutionContent`) — todas as páginas leem esse JSON e atualizam automaticamente a barra do topo, o rodapé, e as páginas Contato e Sobre. Os valores reais também já estão escritos direto no HTML como reserva, então o site funciona normalmente mesmo se esse arquivo falhar ao carregar.
+- `site/content/site.json` — título/texto do hero da Home e as descrições dos números de emergência.
+- `site/js/main.js` (função `loadJsonContent`, usada por `setupInstitutionContent` e `setupSiteContent`) — todas as páginas leem esses JSONs e atualizam automaticamente a barra do topo, o rodapé, as páginas Contato e Sobre, e a Home/404. Os valores reais também já estão escritos direto no HTML como reserva, então o site funciona normalmente mesmo se o fetch falhar.
 
 ## Passo a passo (concluído — mantido como referência)
 
@@ -60,8 +68,8 @@ Me avisa depois de cada passo (ou manda print se travar) — os passos 1 a 4 só
 
 ## Nota de segurança
 
-O painel não cria nenhum privilégio novo: qualquer pessoa com acesso de escrita ao repositório já poderia editar esses arquivos direto pelo GitHub. O Client Secret fica só nas variáveis de ambiente do Netlify (nunca no código do site), e o Decap CMS só consegue editar exatamente os campos definidos em `site/admin/config.yml` — hoje, só os dados da instituição.
+O painel não cria nenhum privilégio novo: qualquer pessoa com acesso de escrita ao repositório já poderia editar esses arquivos direto pelo GitHub. O Client Secret fica só nas variáveis de ambiente do Netlify (nunca no código do site), e o Decap CMS só consegue editar exatamente os campos definidos em `site/admin/config.yml` — hoje, os dados da instituição e o conteúdo geral descrito acima.
 
 ## Ampliando o que é editável
 
-Hoje só `site/content/institution.json` é editável pelo painel. Se fizer sentido, o mesmo padrão pode ser estendido para outros textos que mudam com frequência (ex.: números de emergência, texto da Home) — é só criar um novo arquivo de dados, marcar os elementos correspondentes no HTML com `data-institution="campo"` e adicionar o campo em `config.yml`. Avise se quiser que eu faça isso para outra parte do site.
+O padrão está pronto para reaproveitar: criar um novo arquivo em `site/content/*.json`, marcar os elementos correspondentes no HTML com `data-{prefixo}="campo"` (ou `data-{prefixo}-href="tel:campo"` para links), chamar `loadJsonContent("content/arquivo.json", "prefixo")` numa nova função em `site/js/main.js`, e adicionar a coleção em `config.yml`. Avise se quiser que eu faça isso para outra parte do site.

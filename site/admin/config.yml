@@ -34,3 +34,17 @@ collections:
           - { label: "Horário de atendimento", name: "horario", widget: "string" }
           - { label: "Situação da parceria (aparece no rodapé)", name: "statusParceria", widget: "string" }
           - { label: "Texto sobre a parceria (página Sobre)", name: "textoParceria", widget: "text" }
+
+  - name: "site"
+    label: "Conteúdo geral do site"
+    description: "Textos de baixo risco que mudam com alguma frequência: hero da Home e as descrições dos números de emergência. Os próprios números (180/190/100) e o conteúdo normativo (Legislação, Tipos de Violência) NÃO ficam aqui de propósito - exigem revisão de código."
+    files:
+      - name: "dados"
+        label: "Home e números de emergência"
+        file: "site/content/site.json"
+        fields:
+          - { label: "Título do hero da Home", name: "homeHeroTitulo", widget: "string" }
+          - { label: "Texto do hero da Home", name: "homeHeroTexto", widget: "text" }
+          - { label: "Descrição do Disque 180", name: "emergencia180Desc", widget: "string" }
+          - { label: "Descrição da Emergência policial (190)", name: "emergencia190Desc", widget: "string" }
+          - { label: "Descrição do Ligue 100", name: "emergencia100Desc", widget: "string" }

@@ -119,29 +119,29 @@ function setupFontSizeControl() {
   });
 }
 
-// Dados da instituição parceira (nome, endereço, telefone, e-mail, texto da
-// parceria), lidos de site/content/institution.json — o mesmo arquivo que o
-// painel administrativo (site/admin/, Decap CMS) edita. Qualquer elemento
-// com data-institution="campo" tem o texto substituído; data-institution-href
-// atualiza o atributo href (ex.: tel:/mailto:). O HTML já traz os valores
-// reais como fallback, então a página funciona normalmente mesmo se o fetch
-// falhar — isto só sincroniza com edições feitas depois pelo painel admin.
-function setupInstitutionContent() {
-  var targets = document.querySelectorAll("[data-institution], [data-institution-href]");
-  if (!targets.length) return;
+// Carrega um arquivo JSON de site/content/ (editado pelo painel administrativo,
+// site/admin/, Decap CMS) e aplica seus campos a elementos marcados no HTML.
+// Qualquer elemento com data-{prefix}="campo" tem o texto substituído;
+// data-{prefix}-href="prefixoDoLink:campo" atualiza o atributo href (ex.:
+// tel:/mailto:). O HTML já traz os valores reais como fallback, então a
+// página funciona normalmente mesmo se o fetch falhar — isto só sincroniza
+// com edições feitas depois pelo painel admin.
+function loadJsonContent(url, attrPrefix) {
+  var selector = "[data-" + attrPrefix + "], [data-" + attrPrefix + "-href]";
+  if (!document.querySelector(selector)) return;
 
-  fetch("content/institution.json")
+  fetch(url)
     .then(function (response) {
-      if (!response.ok) throw new Error("Falha ao carregar dados da instituição");
+      if (!response.ok) throw new Error("Falha ao carregar " + url);
       return response.json();
     })
     .then(function (data) {
-      document.querySelectorAll("[data-institution]").forEach(function (el) {
-        var field = el.getAttribute("data-institution");
+      document.querySelectorAll("[data-" + attrPrefix + "]").forEach(function (el) {
+        var field = el.getAttribute("data-" + attrPrefix);
         if (data[field] !== undefined) el.textContent = data[field];
       });
-      document.querySelectorAll("[data-institution-href]").forEach(function (el) {
-        var spec = el.getAttribute("data-institution-href");
+      document.querySelectorAll("[data-" + attrPrefix + "-href]").forEach(function (el) {
+        var spec = el.getAttribute("data-" + attrPrefix + "-href");
         var parts = spec.split(":");
         var prefix = parts[0];
         var field = parts[1];
@@ -151,6 +151,21 @@ function setupInstitutionContent() {
     .catch(function () {
       // Mantém os valores estáticos já presentes no HTML.
     });
+}
+
+// Dados da instituição parceira (nome, endereço, telefone, e-mail, texto da
+// parceria) - site/content/institution.json.
+function setupInstitutionContent() {
+  loadJsonContent("content/institution.json", "institution");
+}
+
+// Textos gerais do site que mudam com alguma frequência mas são de baixo
+// risco (não normativos): título/texto do hero da Home e as descrições dos
+// números de emergência - site/content/site.json. Deliberadamente NÃO inclui
+// os próprios números (180/190/100) nem conteúdo normativo (Legislação,
+// Tipos de Violência) - ver docs/painel-admin-decap-cms.md.
+function setupSiteContent() {
+  loadJsonContent("content/site.json", "site");
 }
 
 // Trilha de navegação ("Você está em: Home > Página"), injetada no topo de
@@ -539,6 +554,7 @@ document.addEventListener("DOMContentLoaded", function () {
   setupFontSizeControl();
   setupContrastControl();
   setupInstitutionContent();
+  setupSiteContent();
   setupBreadcrumbs();
   setupContactForm();
   setupFeedbackWidget();
