@@ -4,21 +4,30 @@
 
 ✅ **Configurado e testado de ponta a ponta** (12/08/2026): login via GitHub OAuth funcionando, edição publicada gerou commit real no repositório (`68ba6d7`, corrigido em seguida por `18d0e81`), e o arquivo `site/content/institution.json` atualizou corretamente. Acesso: `https://caxudex.github.io/violencia-domestica-extensao/admin/`.
 
-Escopo ampliado no mesmo dia com a coleção "Conteúdo geral do site" (`site/content/site.json`: hero da Home + descrições dos números de emergência), usando o mesmo mecanismo já testado.
+Escopo ampliado no mesmo dia com a coleção "Conteúdo geral do site" (`site/content/site.json`), usando o mesmo mecanismo já testado. Hoje cobre **35 campos**: hero de todas as 8 páginas de conteúdo (Home, Sobre, Tipos de Violência, Legislação, Como Denunciar, Rede de Apoio, Participe, 404), os cards descritivos de baixo risco de cada uma (ex.: "Objetivo" em Sobre, "ONGs parceiras"/"Casa da Mulher Brasileira" em Rede de Apoio, "Delegacia da Mulher" e as descrições de emergência específicas de Como Denunciar, os 3 cards de "Outras formas de participar" em Participe) e o texto "Sobre o projeto" do rodapé (todas as páginas).
 
 ## Por que o escopo é limitado (e não o site inteiro)
 
 O edital não exige um CMS completo — ele só pede para "desenvolver o site" (WordPress é citado como exemplo de ferramenta possível, não obrigação; ver justificativa da escolha tecnológica em `docs/relatorio-final.md`, Etapa 6) e, na entrega (Etapa 8), passar o código-fonte com orientações básicas de manutenção. Dentro disso, o painel cobre duas coleções, escolhidas pelo mesmo critério:
 
-- **Instituição parceira** (`site/content/institution.json`): nome, endereço, telefone, e-mail, horário, status da parceria, texto sobre a parceria.
-- **Conteúdo geral do site** (`site/content/site.json`): título/texto do hero da Home e as descrições (não os números) do Disque 180/190/Ligue 100.
+- **Instituição parceira** (`site/content/institution.json`, 10 campos): nome, endereço, telefone, e-mail, horário, status da parceria, texto sobre a parceria.
+- **Conteúdo geral do site** (`site/content/site.json`, 35 campos): título/texto do hero de cada página, cards descritivos de apresentação, e as descrições (não os números) das linhas de emergência.
 
 Ambas reúnem dados que:
 
 - **Mudam de verdade** ao longo do tempo (telefone, endereço, situação da parceria, texto de apresentação).
 - **São de baixo risco ou críticos de estarem certos** — um contato errado numa página de apoio a vítimas de violência doméstica é um risco real, não só estético; já o texto do hero é só apresentação, sem carga normativa.
 
-Conteúdo normativo (Legislação, Tipos de Violência, Como Denunciar, e os **números** de emergência em si) fica **fora** do painel de propósito: é referência legal (Lei Maria da Penha, ECA etc.) ou informação de segurança que não deveria ser editável livremente sem revisão — um erro ali é risco jurídico/de informação. Esse conteúdo continua sob controle de código, revisado como qualquer outra mudança no repositório.
+Fica **fora** do painel de propósito, mesmo depois da ampliação:
+
+- Os **números** de emergência em si (180/190/100) e seus links `tel:`.
+- Os resumos das leis em Legislação (Lei Maria da Penha, Lei do Feminicídio, ECA etc.).
+- As definições legais dos 5 tipos de violência e a citação acadêmica (Azevedo & Guerra, 1995) em Tipos de Violência.
+- O passo a passo de solicitação de medida protetiva em Como Denunciar (contém prazo estatutário de 48h).
+- As definições de CRAS/CREAS em Rede de Apoio (descrevem o mandato legal de instituições públicas reais).
+- A página inteira de Segurança Digital (explica com precisão o que o botão "Sair rapidamente" faz e não faz — conteúdo de segurança, não de apresentação).
+
+É referência legal/normativa ou informação de segurança que não deveria ser editável livremente sem revisão — um erro ali é risco jurídico/de informação. Esse conteúdo continua sob controle de código, revisado como qualquer outra mudança no repositório.
 
 O padrão (`data-institution="campo"` / `data-site="campo"` + `site/content/*.json` + coleção em `config.yml`) é reaproveitável caso surja necessidade real de tornar mais algum campo editável — não é preciso redesenhar nada, só estender (ver "Ampliando o que é editável" abaixo).
 
@@ -39,8 +48,8 @@ O edital cita o WordPress apenas como exemplo ("pode-se utilizar do CMS WordPres
 - `netlify/functions/auth.js` e `netlify/functions/callback.js` — implementam a troca de login com o GitHub (protocolo padrão do Decap CMS para "Custom OAuth Client").
 - `netlify.toml` — publica a pasta `site/` e expõe essas funções nas rotas `/auth` e `/callback`.
 - `site/content/institution.json` — os dados que o painel edita: nome da instituição, nome curto, endereço, telefone, e-mail, horário e o texto sobre a parceria.
-- `site/content/site.json` — título/texto do hero da Home e as descrições dos números de emergência.
-- `site/js/main.js` (função `loadJsonContent`, usada por `setupInstitutionContent` e `setupSiteContent`) — todas as páginas leem esses JSONs e atualizam automaticamente a barra do topo, o rodapé, as páginas Contato e Sobre, e a Home/404. Os valores reais também já estão escritos direto no HTML como reserva, então o site funciona normalmente mesmo se o fetch falhar.
+- `site/content/site.json` — os 35 campos descritos acima (hero de cada página, cards de apresentação, rodapé).
+- `site/js/main.js` (função `loadJsonContent`, usada por `setupInstitutionContent` e `setupSiteContent`) — todas as páginas leem esses JSONs e atualizam automaticamente qualquer elemento marcado com `data-institution="campo"` ou `data-site="campo"`. Os valores reais também já estão escritos direto no HTML como reserva, então o site funciona normalmente mesmo se o fetch falhar.
 
 ## Passo a passo (concluído — mantido como referência)
 
