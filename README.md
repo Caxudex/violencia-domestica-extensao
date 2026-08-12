@@ -47,14 +47,19 @@ A documentação do processo não é mais publicada no site (removida por decis�
 | `docs/status-atividades-oficial.md` | Tabela no formato oficial do edital (Atividade/CH/Finalizado), pronta para copiar no AVA |
 | `docs/formulario-avaliacao-comunidade.md` | Guia para criar o Google Form de avaliação da comunidade (Atividade 31), embutido em `site/participe.html` |
 | `docs/formulario-contato-web3forms.md` | Guia do Web3Forms usado no formulário de Contato (já configurado e testado) |
+| `docs/painel-admin-decap-cms.md` | Guia do painel administrativo (Decap CMS) para editar os dados da instituição sem mexer em código |
 
 ## Página "Participe" - alcance e avaliação da comunidade
 
 [`site/participe.html`](site/participe.html) é uma página pública com um formulário (Google Forms embutido) para visitantes avaliarem o site - usada tanto para ampliar o alcance do projeto quanto como evidência da Atividade 31 do edital ("envio de link para a avaliação da comunidade"). **Pendente:** o `<iframe>` na página ainda está com um link de exemplo - siga `docs/formulario-avaliacao-comunidade.md` para criar o formulário real e substituir o link.
 
+## Painel administrativo
+
+[`site/admin/`](site/admin/index.html) é um painel (Decap CMS) para editar os dados da instituição (nome, endereço, telefone, e-mail, texto da parceria) sem mexer em código — as mudanças viram commits neste repositório e o site publicado atualiza sozinho. **Pendente:** falta ativar o login (Netlify Identity + Git Gateway), passo que só pode ser feito por quem tem acesso às contas do GitHub/Netlify - siga `docs/painel-admin-decap-cms.md`.
+
 ## Manutenção futura
 
-O site não depende de servidor, banco de dados ou build tools - qualquer edição pode ser feita diretamente nos arquivos `.html`, `css/style.css` e `js/main.js` dentro de `site/`. Para adicionar uma nova página, copie a estrutura de header/footer de uma página existente (ex.: `sobre.html`) e ajuste o conteúdo e o link `aria-current="page"` no menu.
+O site não depende de servidor, banco de dados ou build tools - qualquer edição pode ser feita diretamente nos arquivos `.html`, `css/style.css` e `js/main.js` dentro de `site/`, ou pelo painel administrativo acima para os dados da instituição. Para adicionar uma nova página, copie a estrutura de header/footer de uma página existente (ex.: `sobre.html`) e ajuste o conteúdo e o link `aria-current="page"` no menu.
 
 ## Observação sobre a entrega da atividade extensionista
 

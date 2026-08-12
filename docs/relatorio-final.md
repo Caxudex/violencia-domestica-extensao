@@ -28,6 +28,9 @@ Definidos 8 requisitos funcionais e 7 requisitos não funcionais, com rastreabil
 Definida a paleta de cores (roxo institucional + laranja de alerta para o botão de emergência), tipografia baseada em fontes do sistema e especificação dos componentes visuais (cards, botões, header fixo). Documento produzido: `docs/05-prototipacao-alta-fidelidade.md`.
 
 ### Etapa 6 - Implementação da Solução (45h, 15h/semana)
+
+**Escolha tecnológica:** o edital cita o WordPress apenas como exemplo ("pode-se utilizar do CMS WordPress ou desenvolver com base em outra tecnologia que se sinta à vontade"). Optou-se por HTML5, CSS3 e JavaScript puro em vez de WordPress porque: (i) elimina a necessidade de servidor, banco de dados e atualizações de CMS/plugins (sem exposição a vulnerabilidades de plugins como Wordfence precisaria mitigar), o que é mais adequado para uma instituição pública sem equipe de TI dedicada para manutenção contínua; (ii) permite hospedagem gratuita e de baixa manutenção via GitHub Pages, com deploy automatizado (`.github/workflows/deploy-pages.yml`); (iii) resulta num site mais leve e rápido (Lighthouse Performance 97-98/100, ver Etapa 7); e (iv) atende ao requisito não funcional RNF05 (`docs/04-especificacao-requisitos.md`) de solução sem backend próprio. O código-fonte entregue à instituição parceira ao final do projeto (Etapa 8) pode ser editado diretamente nos arquivos `.html`/`.css`/`.js`, sem exigir conhecimento de WordPress.
+
 O site foi implementado em HTML5, CSS3 e JavaScript puro (sem dependência de backend ou CMS), com 7 páginas: `index.html`, `sobre.html`, `tipos-de-violencia.html`, `legislacao.html`, `como-denunciar.html`, `rede-de-apoio.html` e `contato.html`. Recursos implementados:
 - Header fixo com navegação e botão de "Sair rapidamente" (redirecionamento imediato por segurança da vítima).
 - Layout responsivo (mobile, tablet, desktop) via CSS Grid/Flexbox.

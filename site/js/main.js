@@ -119,6 +119,40 @@ function setupFontSizeControl() {
   });
 }
 
+// Dados da instituição parceira (nome, endereço, telefone, e-mail, texto da
+// parceria), lidos de site/content/institution.json — o mesmo arquivo que o
+// painel administrativo (site/admin/, Decap CMS) edita. Qualquer elemento
+// com data-institution="campo" tem o texto substituído; data-institution-href
+// atualiza o atributo href (ex.: tel:/mailto:). O HTML já traz os valores
+// reais como fallback, então a página funciona normalmente mesmo se o fetch
+// falhar — isto só sincroniza com edições feitas depois pelo painel admin.
+function setupInstitutionContent() {
+  var targets = document.querySelectorAll("[data-institution], [data-institution-href]");
+  if (!targets.length) return;
+
+  fetch("content/institution.json")
+    .then(function (response) {
+      if (!response.ok) throw new Error("Falha ao carregar dados da instituição");
+      return response.json();
+    })
+    .then(function (data) {
+      document.querySelectorAll("[data-institution]").forEach(function (el) {
+        var field = el.getAttribute("data-institution");
+        if (data[field] !== undefined) el.textContent = data[field];
+      });
+      document.querySelectorAll("[data-institution-href]").forEach(function (el) {
+        var spec = el.getAttribute("data-institution-href");
+        var parts = spec.split(":");
+        var prefix = parts[0];
+        var field = parts[1];
+        if (data[field] !== undefined) el.setAttribute("href", prefix + ":" + data[field]);
+      });
+    })
+    .catch(function () {
+      // Mantém os valores estáticos já presentes no HTML.
+    });
+}
+
 // Trilha de navegação ("Você está em: Home > Página"), injetada no topo de
 // <main> a partir deste script único, sem precisar editar cada HTML.
 // Usa o link com aria-current="page" do menu como fonte do rótulo; quando a
@@ -504,6 +538,7 @@ document.addEventListener("DOMContentLoaded", function () {
   setupNavToggle();
   setupFontSizeControl();
   setupContrastControl();
+  setupInstitutionContent();
   setupBreadcrumbs();
   setupContactForm();
   setupFeedbackWidget();

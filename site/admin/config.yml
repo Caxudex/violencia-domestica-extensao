@@ -1,0 +1,36 @@
+backend:
+  name: github
+  repo: Caxudex/violencia-domestica-extensao
+  branch: main
+  # URL do site Netlify que hospeda as funções de login (netlify/functions/).
+  base_url: https://incomparable-toffee-9df996.netlify.app
+  auth_endpoint: auth
+
+media_folder: "site/assets"
+public_folder: "/assets"
+
+site_url: https://caxudex.github.io/violencia-domestica-extensao/
+display_url: https://caxudex.github.io/violencia-domestica-extensao/
+logo_url: /favicon.svg
+
+locale: "pt"
+
+collections:
+  - name: "institution"
+    label: "Instituição parceira"
+    description: "Dados de contato e do status da parceria, usados no rodapé, na barra do topo e nas páginas Contato e Sobre de todo o site."
+    files:
+      - name: "dados"
+        label: "Dados de contato e parceria"
+        file: "site/content/institution.json"
+        fields:
+          - { label: "Nome completo da instituição", name: "nome", widget: "string" }
+          - { label: "Nome curto (ex.: CREAS de Timbó)", name: "nomeCurto", widget: "string" }
+          - { label: "Linha \"Instituição\" na página Contato", name: "instituicaoLinha", widget: "string" }
+          - { label: "Endereço", name: "endereco", widget: "string" }
+          - { label: "Telefone (como aparece escrito)", name: "telefone", widget: "string" }
+          - { label: "Telefone (só números, com código do país, para o link de discagem)", name: "telefoneLink", widget: "string", pattern: ["^\\+?[0-9]+$", "Use só números, com código do país. Ex.: +554733823655"] }
+          - { label: "E-mail", name: "email", widget: "string" }
+          - { label: "Horário de atendimento", name: "horario", widget: "string" }
+          - { label: "Situação da parceria (aparece no rodapé)", name: "statusParceria", widget: "string" }
+          - { label: "Texto sobre a parceria (página Sobre)", name: "textoParceria", widget: "text" }

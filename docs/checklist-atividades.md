@@ -64,3 +64,5 @@ Os dois documentos que a instituição concedente deve fornecer/assinar para com
 - ✅ Paleta de cores institucional (padrão gov.br), favicon, ícone no cabeçalho, Open Graph, página 404 personalizada.
 - ✅ Content Security Policy reforçada, honeypot anti-spam e rate limiting no formulário de contato.
 - ✅ Auditoria Lighthouse real: Performance 97–98/100, Acessibilidade/Boas Práticas/SEO 100/100.
+- ✅ Barra institucional, rodapé em colunas, breadcrumbs e botão de alto contraste (visual mais próximo de portal gov.br) em todas as páginas.
+- 🔶 Painel administrativo (Decap CMS) em `site/admin/`, editando `site/content/institution.json` (nome, endereço, telefone, e-mail, texto da parceria) sem precisar mexer em HTML - falta só ativar o login (Netlify Identity + Git Gateway), ver `docs/painel-admin-decap-cms.md`.

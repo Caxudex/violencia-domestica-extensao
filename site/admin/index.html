@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval' https://unpkg.com; style-src 'self' 'unsafe-inline' https://unpkg.com; img-src 'self' data: https:; connect-src 'self' https://api.github.com https://github.com https://*.githubusercontent.com; frame-src 'self'; font-src 'self' data: https://unpkg.com; object-src 'none'; base-uri 'self'; form-action 'self' https://github.com;">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painel administrativo — IndaCity</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+<body>
+<!--
+  Painel administrativo (Decap CMS), para a instituição parceira editar os
+  dados de contato/parceria (site/content/institution.json) sem mexer em
+  código. Configuração: site/admin/config.yml (backend: github).
+
+  Login via GitHub OAuth App + funções de login hospedadas no Netlify
+  (netlify/functions/auth.js e callback.js, publicadas junto com o site no
+  Netlify) — passo a passo em docs/painel-admin-decap-cms.md.
+-->
+<script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+</body>
+</html>

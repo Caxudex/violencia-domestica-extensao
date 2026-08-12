@@ -1,0 +1,12 @@
+{
+  "nome": "Secretaria de Assistência Social de Timbó",
+  "nomeCurto": "CREAS de Timbó",
+  "instituicaoLinha": "CREAS de Timbó - Secretaria de Assistência Social",
+  "endereco": "Avenida Getúlio Vargas, 700 - Caixa Postal 04 - CEP 89120-000 - Timbó/SC",
+  "telefone": "(47) 3382-3655",
+  "telefoneLink": "+554733823655",
+  "email": "contato@timbo.sc.gov.br",
+  "horario": "segunda a sexta, das 8h às 17h",
+  "statusParceria": "Parceria em processo de formalização",
+  "textoParceria": "O projeto tem a Secretaria de Assistência Social de Timbó como instituição concedente de referência - a parceria ainda está em processo de formalização, com o objetivo de colaborar no levantamento de requisitos e na validação do conteúdo apresentado. Ao final do projeto, o código-fonte completo será entregue à instituição para manutenção e evolução contínua da solução."
+}
