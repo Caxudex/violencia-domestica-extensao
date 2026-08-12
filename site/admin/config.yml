@@ -37,10 +37,10 @@ collections:
 
   - name: "site"
     label: "Conteúdo geral do site"
-    description: "Textos de baixo risco que mudam com alguma frequência: hero da Home e as descrições dos números de emergência. Os próprios números (180/190/100) e o conteúdo normativo (Legislação, Tipos de Violência) NÃO ficam aqui de propósito - exigem revisão de código."
+    description: "Textos de baixo risco que mudam com alguma frequência: heróis de todas as páginas, cards descritivos e o rodapé. Os números de emergência (180/190/100) em si e o conteúdo normativo (leis, definições legais de tipos de violência, passo a passo de medida protetiva) NÃO ficam aqui de propósito - exigem revisão de código."
     files:
       - name: "dados"
-        label: "Home e números de emergência"
+        label: "Textos gerais do site"
         file: "site/content/site.json"
         fields:
           - { label: "Título do hero da Home", name: "homeHeroTitulo", widget: "string" }
@@ -56,3 +56,25 @@ collections:
           - { label: "Texto do hero da página Participe", name: "participeHeroTexto", widget: "text" }
           - { label: "Registro Institucional (Participe) - parágrafo 1", name: "participeInstitucionalTexto1", widget: "text" }
           - { label: "Registro Institucional (Participe) - parágrafo 2", name: "participeInstitucionalTexto2", widget: "text" }
+          - { label: "Participe - card \"Compartilhe\"", name: "participeCardCompartilharTexto", widget: "string" }
+          - { label: "Participe - card \"Conheça a rede de apoio\"", name: "participeCardRedeApoioTexto", widget: "string" }
+          - { label: "Participe - card \"Fale com a instituição\"", name: "participeCardContatoTexto", widget: "string" }
+          - { label: "Sobre - título do hero", name: "sobreHeroTitulo", widget: "string" }
+          - { label: "Sobre - texto do hero", name: "sobreHeroTexto", widget: "text" }
+          - { label: "Sobre - texto do Objetivo", name: "sobreObjetivoTexto", widget: "text" }
+          - { label: "Tipos de Violência - título do hero", name: "tiposViolenciaHeroTitulo", widget: "string" }
+          - { label: "Tipos de Violência - texto do hero", name: "tiposViolenciaHeroTexto", widget: "text" }
+          - { label: "Legislação - título do hero", name: "legislacaoHeroTitulo", widget: "string" }
+          - { label: "Legislação - texto do hero", name: "legislacaoHeroTexto", widget: "text" }
+          - { label: "Como Denunciar - título do hero", name: "comoDenunciarHeroTitulo", widget: "string" }
+          - { label: "Como Denunciar - texto do hero", name: "comoDenunciarHeroTexto", widget: "text" }
+          - { label: "Como Denunciar - descrição do Disque 180", name: "comoDenunciarEmergencia180Desc", widget: "string" }
+          - { label: "Como Denunciar - descrição da Emergência policial (190)", name: "comoDenunciarEmergencia190Desc", widget: "string" }
+          - { label: "Como Denunciar - descrição do Ligue 100", name: "comoDenunciarEmergencia100Desc", widget: "string" }
+          - { label: "Como Denunciar - card \"Delegacia da Mulher\"", name: "comoDenunciarDelegaciaTexto", widget: "string" }
+          - { label: "Rede de Apoio - título do hero", name: "redeApoioHeroTitulo", widget: "string" }
+          - { label: "Rede de Apoio - texto do hero", name: "redeApoioHeroTexto", widget: "text" }
+          - { label: "Rede de Apoio - card \"ONGs parceiras\"", name: "redeApoioOngsTexto", widget: "text" }
+          - { label: "Rede de Apoio - card \"Casa da Mulher Brasileira\"", name: "redeApoioCasaMulherTexto", widget: "text" }
+          - { label: "Página não encontrada (404) - título", name: "notFoundHeroTitulo", widget: "string" }
+          - { label: "Página não encontrada (404) - texto", name: "notFoundHeroTexto", widget: "text" }
