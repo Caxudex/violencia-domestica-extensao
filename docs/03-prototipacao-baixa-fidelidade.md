@@ -1,9 +1,9 @@
-# Etapa 3 — Prototipação de Baixa Fidelidade
+# Etapa 3 - Prototipação de Baixa Fidelidade
 
 ## Objetivo da etapa
 Traduzir as necessidades levantadas na Etapa 2 em wireframes simples (esboços) que definam a disposição dos elementos em cada página, antes de qualquer refinamento visual.
 
-## Elemento transversal — Header (presente em todas as páginas)
+## Elemento transversal - Header (presente em todas as páginas)
 
 ```
 +--------------------------------------------------------------+

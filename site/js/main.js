@@ -23,7 +23,7 @@ function setupExitButton() {
     infoLink.className = "exit-info-link";
     infoLink.href = getBasePrefix() + "seguranca-digital.html";
     infoLink.textContent = "ⓘ";
-    infoLink.setAttribute("aria-label", "O que o botão de saída faz (e não faz) — dicas de segurança digital");
+    infoLink.setAttribute("aria-label", "O que o botão de saída faz (e não faz) - dicas de segurança digital");
     wrapper.appendChild(infoLink);
 
     headerInner.insertBefore(wrapper, navToggle);
@@ -119,6 +119,61 @@ function setupFontSizeControl() {
   });
 }
 
+// Trilha de navegação ("Você está em: Home > Página"), injetada no topo de
+// <main> a partir deste script único, sem precisar editar cada HTML.
+// Usa o link com aria-current="page" do menu como fonte do rótulo; quando a
+// página não está no menu principal (ex.: Segurança Digital), cai para o
+// início do <title>. Página de erro (404, com meta robots noindex) e a
+// própria Home (que já é o topo da trilha) não recebem o componente.
+function setupBreadcrumbs() {
+  var main = document.querySelector("#conteudo");
+  if (!main || document.querySelector('meta[name="robots"]')) return;
+
+  var current = document.querySelector(".main-nav a[aria-current='page']");
+  var label = current ? current.textContent.trim() : (document.title.split("-")[0] || "").trim();
+  if (!label || label === "Home") return;
+
+  var nav = document.createElement("nav");
+  nav.className = "breadcrumbs";
+  nav.setAttribute("aria-label", "Trilha de navegação");
+  nav.innerHTML =
+    '<ol><li><a href="index.html">Home</a></li>' +
+    '<li aria-current="page">' + label + "</li></ol>";
+  main.insertBefore(nav, main.firstChild);
+}
+
+// Botão "Alto contraste" (padrão comum em sites gov.br), injetado ao lado do
+// controle de tamanho de fonte. Alterna o atributo data-contrast="high" na
+// raiz do documento, que o CSS usa para aplicar o tema preto/amarelo.
+function setupContrastControl() {
+  var STORAGE_KEY = "contrast-pref";
+  var anchor = document.querySelector(".font-size-control") || document.querySelector(".logo");
+  if (!anchor) return;
+
+  var btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = "contrast-btn";
+  btn.textContent = "Alto contraste";
+  btn.setAttribute("aria-pressed", "false");
+  anchor.insertAdjacentElement("afterend", btn);
+
+  function apply(enabled) {
+    if (enabled) {
+      document.documentElement.setAttribute("data-contrast", "high");
+    } else {
+      document.documentElement.removeAttribute("data-contrast");
+    }
+    btn.setAttribute("aria-pressed", enabled ? "true" : "false");
+    localStorage.setItem(STORAGE_KEY, enabled ? "high" : "normal");
+  }
+
+  apply(localStorage.getItem(STORAGE_KEY) === "high");
+
+  btn.addEventListener("click", function () {
+    apply(document.documentElement.getAttribute("data-contrast") !== "high");
+  });
+}
+
 // Enquanto o Google Form real da página Participe não for configurado, o
 // iframe placeholder mostra um erro feio do Google Drive ("Sorry, the file
 // you have requested does not exist"). Troca isso por uma mensagem amigável,
@@ -197,7 +252,7 @@ function findColumnIndex(headerRow, keyword) {
 
 // Contador de participantes na página Participe: lê a planilha de respostas
 // do Google Sheets publicada na web como CSV (vinculada ao formulário de
-// avaliação) e mostra dois números — total de avaliações, e quantas têm o
+// avaliação) e mostra dois números - total de avaliações, e quantas têm o
 // campo "Instituição/Organização" preenchido (presença institucional
 // registrada). Enquanto o link não for configurado (ver
 // docs/formulario-avaliacao-comunidade.md), o elemento fica oculto.
@@ -282,7 +337,7 @@ function setupFeedbackWidget() {
   } else {
     widget.querySelectorAll(".feedback-btn").forEach(function (btn) {
       btn.addEventListener("click", function () {
-        // Registro local apenas (sem backend nesta entrega — RNF05).
+        // Registro local apenas (sem backend nesta entrega - RNF05).
         // Quando o Google Form real da Etapa/Atividade 31 estiver pronto,
         // este evento pode ser conectado a ele (ver docs/formulario-avaliacao-comunidade.md).
         localStorage.setItem(storageKey, btn.getAttribute("data-answer"));
@@ -344,7 +399,7 @@ function setupContactForm() {
       return;
     }
 
-    // Envio real via Web3Forms (serviço gratuito, sem backend próprio —
+    // Envio real via Web3Forms (serviço gratuito, sem backend próprio -
     // RNF05 continua respeitado, já que não hospedamos servidor algum).
     // Guia de configuração: docs/formulario-contato-web3forms.md
     var accessKey = form.getAttribute("data-web3forms-key") || "";
@@ -367,7 +422,7 @@ function setupContactForm() {
       },
       body: JSON.stringify({
         access_key: accessKey,
-        subject: (form.elements["subject"] && form.elements["subject"].value) || "Nova mensagem — IndaCity",
+        subject: (form.elements["subject"] && form.elements["subject"].value) || "Nova mensagem - IndaCity",
         name: name,
         email: email,
         message: message
@@ -397,7 +452,7 @@ function setupContactForm() {
 
 // Widget VLibras (tradutor de Libras do governo federal), injetado em todas
 // as páginas a partir deste script único. Padrão comum em sites públicos
-// brasileiros, por exigência de acessibilidade (LBI — Lei 13.146/2015).
+// brasileiros, por exigência de acessibilidade (LBI - Lei 13.146/2015).
 // Entrada suave das seções ao rolar a página. Progressive enhancement: a
 // classe .reveal só é adicionada aqui, então sem JS (ou com
 // prefers-reduced-motion) o conteúdo permanece visível normalmente.
@@ -448,6 +503,8 @@ document.addEventListener("DOMContentLoaded", function () {
   setupExitButton();
   setupNavToggle();
   setupFontSizeControl();
+  setupContrastControl();
+  setupBreadcrumbs();
   setupContactForm();
   setupFeedbackWidget();
   setupFormEmbed();

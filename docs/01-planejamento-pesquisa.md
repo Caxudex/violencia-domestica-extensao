@@ -1,4 +1,4 @@
-# Etapa 1 — Planejamento e Pesquisa
+# Etapa 1 - Planejamento e Pesquisa
 
 ## Dados oficiais da atividade extensionista
 
@@ -6,7 +6,7 @@
 |---|---|
 | Modalidade | Projetos |
 | Submodalidade | Projeto de Ensino Extensionista |
-| ODS vinculado | Objetivo 16 — Paz, Justiça e Instituições Eficazes |
+| ODS vinculado | Objetivo 16 - Paz, Justiça e Instituições Eficazes |
 | Curso propositor | Análise e Desenvolvimento de Sistemas |
 | Área do conhecimento | Computação e Tecnologias Digitais da Informação e Comunicação (TDIC) |
 | Ofertada para mais de um curso | Sim |
@@ -36,22 +36,22 @@ Reunir a base teórica e normativa sobre enfrentamento à violência doméstica 
 Conforme o edital, antes de iniciar a atividade o estudante deve: (i) consultar a instituição escolhida para confirmar que possui **CNPJ e carimbo**; (ii) solicitar autorização formal para o desenvolvimento das ações previstas; (iii) confirmar que a instituição fornecerá os documentos necessários para comprovação da atividade (**registro de frequência**); e (iv) garantir que haverá um **responsável na instituição** para acompanhar a execução das atividades. Veja o modelo em `docs/termo-de-parceria.md`.
 
 ## Instituição parceira
-**Secretaria de Assistência Social de Timbó** — instituição concedente de referência escolhida para esta atividade extensionista, como órgão público municipal que atua (entre outras frentes) no acolhimento a vítimas de violência doméstica. A parceria ainda está em processo de formalização: antes de iniciar as atividades presenciais, é preciso confirmar CNPJ e carimbo, obter autorização formal e designar um responsável pela prefeitura para acompanhar a execução (ver seção acima e `docs/termo-de-parceria.md`).
+**Secretaria de Assistência Social de Timbó** - instituição concedente de referência escolhida para esta atividade extensionista, como órgão público municipal que atua (entre outras frentes) no acolhimento a vítimas de violência doméstica. A parceria ainda está em processo de formalização: antes de iniciar as atividades presenciais, é preciso confirmar CNPJ e carimbo, obter autorização formal e designar um responsável pela prefeitura para acompanhar a execução (ver seção acima e `docs/termo-de-parceria.md`).
 
 Proposta de colaboração (sujeita à formalização): pretende-se que a Secretaria de Assistência Social de Timbó disponibilize um profissional de referência da área de assistência social para validar conteúdo e participar do levantamento de requisitos (Etapa 2), em troca do recebimento do site finalizado, com código-fonte e orientações de manutenção, ao final do projeto.
 
-## Pesquisa bibliográfica — síntese
+## Pesquisa bibliográfica - síntese
 
 ### Marco legal
-- **Lei nº 11.340/2006 (Lei Maria da Penha)** — cria mecanismos para coibir a violência doméstica e familiar contra a mulher, tipifica as formas de violência (física, psicológica, sexual, patrimonial e moral) e institui medidas protetivas de urgência.
+- **Lei nº 11.340/2006 (Lei Maria da Penha)** - cria mecanismos para coibir a violência doméstica e familiar contra a mulher, tipifica as formas de violência (física, psicológica, sexual, patrimonial e moral) e institui medidas protetivas de urgência.
   Fonte: https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11340.htm
-- **Política Nacional de Enfrentamento à Violência contra as Mulheres** — organiza a atuação do poder público em quatro eixos: prevenção, combate, assistência e garantia de direitos.
+- **Política Nacional de Enfrentamento à Violência contra as Mulheres** - organiza a atuação do poder público em quatro eixos: prevenção, combate, assistência e garantia de direitos.
   Fonte: https://www.gov.br/mdh/pt-br/navegue-por-temas/politicas-para-mulheres/arquivo/arquivos-diversos/sev/pacto/documentos/politica-nacional-enfrentamento-a-violencia-versao-final.pdf
 - **Estatuto da Criança e do Adolescente (ECA)** e a definição de violência doméstica contra crianças e adolescentes segundo Azevedo & Guerra (1995, p. 36): todo ato/omissão de pais, parentes ou responsáveis capaz de causar dano físico, sexual ou psicológico, que nega à criança sua condição de sujeito em desenvolvimento.
-- **Lei nº 13.104/2015** — Lei do Feminicídio, qualifica o feminicídio como circunstância agravante do homicídio.
-- **Lei nº 12.845/2013** — obriga hospitais da rede pública e privada a prestar atendimento imediato e integral a vítimas de violência sexual.
-- **Lei nº 12.737/2012** — tipifica delitos informáticos, relevante ao requisito de segurança digital das vítimas (botão de saída rápida).
-- **Lei nº 12.650/2012** — altera o prazo de prescrição de crimes sexuais contra crianças e adolescentes.
+- **Lei nº 13.104/2015** - Lei do Feminicídio, qualifica o feminicídio como circunstância agravante do homicídio.
+- **Lei nº 12.845/2013** - obriga hospitais da rede pública e privada a prestar atendimento imediato e integral a vítimas de violência sexual.
+- **Lei nº 12.737/2012** - tipifica delitos informáticos, relevante ao requisito de segurança digital das vítimas (botão de saída rápida).
+- **Lei nº 12.650/2012** - altera o prazo de prescrição de crimes sexuais contra crianças e adolescentes.
 
 ### Tipos de violência doméstica (a detalhar no site)
 1. Física
@@ -90,7 +90,7 @@ Requisito transversal identificado já nesta fase: **botão de saída rápida** 
 
 Limite diário: máximo de 8 horas de atividade extensionista por dia.
 
-## Apêndice — Cronograma semanal detalhado (conforme edital)
+## Apêndice - Cronograma semanal detalhado (conforme edital)
 
 | Semana | Foco | Carga horária | Detalhamento |
 |---|---|---|---|
