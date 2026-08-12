@@ -2,6 +2,8 @@
 
 Mapeamento de cada atividade da tabela de carga horária do edital para a evidência/entregável correspondente neste repositório, e o que ainda depende de ação pessoal do estudante.
 
+> Para a tabela no formato oficial do edital (Atividade / Carga Horária / Finalizado), pronta para copiar no Ambiente Virtual de Aprendizagem, veja `docs/status-atividades-oficial.md`.
+
 Legenda: ✅ Pronto neste repositório · ⚠️ Requer ação pessoal do estudante (não pode ser gerado por terceiros)
 
 | # | Atividade | Evidência / Entregável | Status |
@@ -46,7 +48,7 @@ Os dois documentos que a instituição concedente deve fornecer/assinar para com
 
 ## Itens que ainda dependem de você antes da submissão
 
-1. Formalizar a parceria com a **Secretaria de Assistência Social de Timbó** — confirmar que ela possui **CNPJ e carimbo**, obter autorização formal e garantir um responsável que acompanhe as atividades — atualizar `docs/termo-de-parceria.md` com os dados completos (secretaria/departamento, responsável, endereço) e coletar assinatura.
+1. Formalizar a parceria com a **Secretaria de Assistência Social de Timbó** — confirmar que ela possui **CNPJ e carimbo**, obter autorização formal e garantir um responsável que acompanhe as atividades — atualizar `docs/termo-de-parceria.md` com os dados completos (responsável, endereço, contato) e coletar assinatura. Substituir também os dados provisórios em `site/contato.html` (endereço, telefone, e-mail) pelos reais da secretaria.
 2. Anexar registro fotográfico da visita/contato com a instituição.
 3. Preencher e assinar o **Registro de Frequência** (`docs/ficha-de-frequencia.md`, ou a ficha oficial da instituição de ensino).
 4. Aplicar o [Google Form de levantamento](https://docs.google.com/forms/d/e/1FAIpQLSfA6eaO5LOXyTP2DMPiCTXPM-f6n1N9j48hNhtiEX1L6mhgHg/viewform) nos grupos focais reais com ONGs, Polícia Civil e Militar (Etapa 2), e atualizar `docs/02-levantamento-informacoes.md` com as respostas reais coletadas.
@@ -54,3 +56,11 @@ Os dois documentos que a instituição concedente deve fornecer/assinar para com
 6. Depois de coletar respostas com instituição preenchida, exportar a lista de participação institucional (nome, instituição, cargo, data) da planilha do Google Forms para anexar como evidência no relatório apresentado à instituição parceira e à universidade.
 7. (Opcional) Publicar a planilha como CSV e configurar o contador de participantes em `site/participe.html` (`data-csv-url`).
 8. Agendar e realizar a apresentação presencial do relatório (Atividade 30).
+
+## Concluído desde a última revisão (não estava no edital original, mas reforça a qualidade)
+
+- ✅ Formulário de Contato conectado de verdade ao Web3Forms (testado e confirmado — ver `docs/formulario-contato-web3forms.md`).
+- ✅ Widget VLibras (tradutor de Libras) em todo o site, por exigência de acessibilidade da LBI.
+- ✅ Paleta de cores institucional (padrão gov.br), favicon, ícone no cabeçalho, Open Graph, página 404 personalizada.
+- ✅ Content Security Policy reforçada, honeypot anti-spam e rate limiting no formulário de contato.
+- ✅ Auditoria Lighthouse real: Performance 97–98/100, Acessibilidade/Boas Práticas/SEO 100/100.
