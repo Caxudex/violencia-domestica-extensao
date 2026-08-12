@@ -1,7 +1,7 @@
 # Etapa 2 — Levantamento de Informações
 
 ## Objetivo da etapa
-Avaliar e analisar, em conjunto com profissionais especialistas (perfil de assistente social do CRAS), quais informações e funcionalidades o site precisa oferecer para efetivamente apoiar vítimas de violência doméstica e a comunidade em geral.
+Avaliar e analisar, em conjunto com profissionais especialistas (perfil de assistente social do CREAS — órgão responsável pela proteção social especial, que trata casos de violação de direitos como a violência doméstica), quais informações e funcionalidades o site precisa oferecer para efetivamente apoiar vítimas de violência doméstica e a comunidade em geral.
 
 ## Instrumento de coleta de dados
 
@@ -12,7 +12,7 @@ Conforme sugerido pelo edital ("Ferramentas de coleta de dados: Google Forms ou 
 Este é o mesmo formulário usado nas reuniões presenciais com os grupos focais (Etapa 2), preenchido pelos próprios participantes ou pelo estudante durante a entrevista.
 
 ## Método
-Grupos focais presenciais com membros de ONGs, Polícia Civil e Militar, além de profissionais do CRAS (10 horas presenciais, conforme cronograma), utilizando o formulário acima como instrumento estruturado de coleta. As respostas ficam organizadas automaticamente numa planilha Google Sheets vinculada ao formulário, que pode ser anexada como evidência no relatório final.
+Grupos focais presenciais com membros de ONGs, Polícia Civil e Militar, além de profissionais do CREAS (10 horas presenciais, conforme cronograma), utilizando o formulário acima como instrumento estruturado de coleta. As respostas ficam organizadas automaticamente numa planilha Google Sheets vinculada ao formulário, que pode ser anexada como evidência no relatório final.
 
 ## Roteiro de entrevista e síntese das respostas
 

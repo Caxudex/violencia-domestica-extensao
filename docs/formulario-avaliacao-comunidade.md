@@ -34,7 +34,7 @@ Este documento é um guia para você (o estudante) criar o formulário real. Dep
 
 ## Registro de Participação Institucional
 
-Os campos "Instituição/Organização" e "Cargo/Função" são o que diferencia uma resposta **anônima** (útil para medir alcance geral) de uma resposta que vira **evidência formal de participação institucional** — por exemplo, um profissional do CRAS, de uma ONG parceira ou da Polícia Civil/Militar que queira que sua participação conste documentada no relatório apresentado à instituição de ensino e à instituição parceira.
+Os campos "Instituição/Organização" e "Cargo/Função" são o que diferencia uma resposta **anônima** (útil para medir alcance geral) de uma resposta que vira **evidência formal de participação institucional** — por exemplo, um profissional do CREAS, de uma ONG parceira ou da Polícia Civil/Militar que queira que sua participação conste documentada no relatório apresentado à instituição de ensino e à instituição parceira.
 
 Na página `site/participe.html`, a seção "Registro de Participação Institucional" explica isso ao visitante antes de ele preencher o formulário. Como a planilha do Google Sheets registra data e hora automaticamente em cada resposta, não é preciso adicionar um campo manual de data.
 
