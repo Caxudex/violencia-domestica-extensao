@@ -36,9 +36,9 @@ Reunir a base teórica e normativa sobre enfrentamento à violência doméstica 
 Conforme o edital, antes de iniciar a atividade o estudante deve: (i) consultar a instituição escolhida para confirmar que possui **CNPJ e carimbo**; (ii) solicitar autorização formal para o desenvolvimento das ações previstas; (iii) confirmar que a instituição fornecerá os documentos necessários para comprovação da atividade (**registro de frequência**); e (iv) garantir que haverá um **responsável na instituição** para acompanhar a execução das atividades. Veja o modelo em `docs/termo-de-parceria.md`.
 
 ## Instituição parceira
-**Prefeitura Municipal de Indaial** — instituição concedente de referência escolhida para esta atividade extensionista, como órgão público municipal que atua (entre outras frentes) no acolhimento a vítimas de violência doméstica. A parceria ainda está em processo de formalização: antes de iniciar as atividades presenciais, é preciso confirmar CNPJ e carimbo, obter autorização formal e designar um responsável pela prefeitura para acompanhar a execução (ver seção acima e `docs/termo-de-parceria.md`).
+**Secretaria de Assistência Social de Timbó** — instituição concedente de referência escolhida para esta atividade extensionista, como órgão público municipal que atua (entre outras frentes) no acolhimento a vítimas de violência doméstica. A parceria ainda está em processo de formalização: antes de iniciar as atividades presenciais, é preciso confirmar CNPJ e carimbo, obter autorização formal e designar um responsável pela prefeitura para acompanhar a execução (ver seção acima e `docs/termo-de-parceria.md`).
 
-Proposta de colaboração (sujeita à formalização): pretende-se que a Prefeitura Municipal de Indaial disponibilize um profissional de referência da área de assistência social para validar conteúdo e participar do levantamento de requisitos (Etapa 2), em troca do recebimento do site finalizado, com código-fonte e orientações de manutenção, ao final do projeto.
+Proposta de colaboração (sujeita à formalização): pretende-se que a Secretaria de Assistência Social de Timbó disponibilize um profissional de referência da área de assistência social para validar conteúdo e participar do levantamento de requisitos (Etapa 2), em troca do recebimento do site finalizado, com código-fonte e orientações de manutenção, ao final do projeto.
 
 ## Pesquisa bibliográfica — síntese
 
@@ -65,7 +65,7 @@ Proposta de colaboração (sujeita à formalização): pretende-se que a Prefeit
 | Página | Propósito |
 |---|---|
 | Home | Acolhimento, chamada à ação, acesso rápido a canais de denúncia |
-| Sobre | Objetivo do projeto e da parceria com a Prefeitura Municipal de Indaial |
+| Sobre | Objetivo do projeto e da parceria com a Secretaria de Assistência Social de Timbó |
 | Tipos de Violência | Explicação de cada tipo, incluindo violência contra crianças/adolescentes |
 | Legislação | Resumo da Lei Maria da Penha e Política Nacional, com links oficiais |
 | Como Denunciar | Canais oficiais (Disque 180, 190, Ligue 100) e medidas protetivas |

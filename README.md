@@ -1,6 +1,6 @@
 # Site sobre Enfrentamento à Violência Doméstica
 
-Projeto de extensão universitária: site de conscientização e combate à violência doméstica, desenvolvido com a **Prefeitura Municipal de Indaial** como instituição concedente de referência (parceria em processo de formalização — ver `docs/termo-de-parceria.md`).
+Projeto de extensão universitária: site de conscientização e combate à violência doméstica, desenvolvido com a **Secretaria de Assistência Social de Timbó** como instituição concedente de referência (parceria em processo de formalização — ver `docs/termo-de-parceria.md`).
 
 ## Status do projeto
 

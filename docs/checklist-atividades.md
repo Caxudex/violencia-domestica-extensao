@@ -6,7 +6,7 @@ Legenda: ✅ Pronto neste repositório · ⚠️ Requer ação pessoal do estuda
 
 | # | Atividade | Evidência / Entregável | Status |
 |---|---|---|---|
-| 1 | Leitura do projeto; seleção da instituição; contato; registro fotográfico | Instituição concedente de referência definida em `docs/01-planejamento-pesquisa.md` (Prefeitura Municipal de Indaial). **Registro fotográfico** da visita real (documento obrigatório) | ⚠️ Formalizar a parceria: confirmar CNPJ/carimbo e responsável (ver `docs/termo-de-parceria.md`), e anexar fotos da visita |
+| 1 | Leitura do projeto; seleção da instituição; contato; registro fotográfico | Instituição concedente de referência definida em `docs/01-planejamento-pesquisa.md` (Secretaria de Assistência Social de Timbó). **Registro fotográfico** da visita real (documento obrigatório) | ⚠️ Formalizar a parceria: confirmar CNPJ/carimbo e responsável (ver `docs/termo-de-parceria.md`), e anexar fotos da visita |
 | 2 | Pesquisa e Levantamento — Introdução (presencial) | `docs/02-levantamento-informacoes.md` — [Google Form real](https://docs.google.com/forms/d/e/1FAIpQLSfA6eaO5LOXyTP2DMPiCTXPM-f6n1N9j48hNhtiEX1L6mhgHg/viewform) | ✅ Instrumento pronto — falta aplicar nos grupos focais reais |
 | 3 | Pesquisa e Levantamento — Desenvolvimento (presencial) | `docs/02-levantamento-informacoes.md` | ✅ Instrumento pronto — falta aplicar nos grupos focais reais |
 | 4 | Pesquisa e Levantamento — Conclusão | `docs/02-levantamento-informacoes.md` (seção "Necessidades identificadas") | ⚠️ Substituir respostas ilustrativas pelas coletadas na planilha do Google Forms |
@@ -46,7 +46,7 @@ Os dois documentos que a instituição concedente deve fornecer/assinar para com
 
 ## Itens que ainda dependem de você antes da submissão
 
-1. Formalizar a parceria com a **Prefeitura Municipal de Indaial** — confirmar que ela possui **CNPJ e carimbo**, obter autorização formal e garantir um responsável que acompanhe as atividades — atualizar `docs/termo-de-parceria.md` com os dados completos (secretaria/departamento, responsável, endereço) e coletar assinatura.
+1. Formalizar a parceria com a **Secretaria de Assistência Social de Timbó** — confirmar que ela possui **CNPJ e carimbo**, obter autorização formal e garantir um responsável que acompanhe as atividades — atualizar `docs/termo-de-parceria.md` com os dados completos (secretaria/departamento, responsável, endereço) e coletar assinatura.
 2. Anexar registro fotográfico da visita/contato com a instituição.
 3. Preencher e assinar o **Registro de Frequência** (`docs/ficha-de-frequencia.md`, ou a ficha oficial da instituição de ensino).
 4. Aplicar o [Google Form de levantamento](https://docs.google.com/forms/d/e/1FAIpQLSfA6eaO5LOXyTP2DMPiCTXPM-f6n1N9j48hNhtiEX1L6mhgHg/viewform) nos grupos focais reais com ONGs, Polícia Civil e Militar (Etapa 2), e atualizar `docs/02-levantamento-informacoes.md` com as respostas reais coletadas.

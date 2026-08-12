@@ -1,6 +1,6 @@
 # Termo de Parceria / Carta de Aceite Institucional (Modelo)
 
-> **Como usar:** este é um modelo para formalizar a parceria com a **Prefeitura Municipal de Indaial**, instituição concedente de referência escolhida para a atividade extensionista. Preencha os campos entre colchetes (secretaria/departamento responsável, CNPJ, endereço, responsável e contato) e obtenha assinatura/carimbo antes de anexar à submissão.
+> **Como usar:** este é um modelo para formalizar a parceria com a **Secretaria de Assistência Social de Timbó**, instituição concedente de referência escolhida para a atividade extensionista. Preencha os campos entre colchetes (secretaria/departamento responsável, CNPJ, endereço, responsável e contato) e obtenha assinatura/carimbo antes de anexar à submissão.
 >
 > **Exigência do edital:** antes de iniciar a atividade, o estudante deve (i) confirmar que a instituição possui **CNPJ e carimbo**; (ii) solicitar autorização formal para o desenvolvimento das ações previstas; (iii) confirmar que a instituição fornecerá o **Registro de Frequência** ao final; e (iv) garantir que haverá um **responsável na instituição** para acompanhar a execução das atividades.
 
@@ -13,8 +13,8 @@
 **Curso:** [curso]
 **RA/Matrícula:** [número]
 
-**Instituição concedente (parceira):** Prefeitura Municipal de Indaial [+ secretaria/departamento específico, se aplicável — ex.: Secretaria de Assistência Social]
-**CNPJ/registro:** [CNPJ da Prefeitura Municipal de Indaial]
+**Instituição concedente (parceira):** Secretaria de Assistência Social de Timbó — Prefeitura Municipal de Timbó (SC)
+**CNPJ/registro:** [CNPJ da Prefeitura Municipal de Timbó / Secretaria de Assistência Social]
 **Endereço:** [endereço completo]
 **Responsável pela instituição:** [nome, cargo]
 **Contato:** [telefone/e-mail]
