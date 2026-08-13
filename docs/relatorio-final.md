@@ -45,6 +45,8 @@ Foi também criada a página `site/participe.html`, com um formulário (Google F
 ### Etapa 7 - Verificação e Validação (15h, 5h presenciais)
 As páginas foram verificadas quanto à navegação entre todas as seções, funcionamento do botão de saída rápida, responsividade em diferentes larguras de tela e validação do formulário de contato (campos obrigatórios e formato de e-mail). Todos os requisitos funcionais (RF01–RF08) e não funcionais (RNF01–RNF07) especificados na Etapa 4 foram conferidos item a item.
 
+**Feedback real da comunidade e ação tomada:** através do formulário de avaliação (`site/participe.html`), foi recebida a seguinte sugestão de um participante: *"a maioria das pessoas tendem a permanecer em sites ou blogs informativos, quando usamos imagens ou gráficos [...] Talvez seja interessante mesclar os textos com desenhos ou ícones. Ainda mais que o tema é de EXTREMA importância e DEVE ser de conhecimento de todos."* Em resposta, foram adicionados ícones ilustrativos (SVG) em todos os cards do site e uma ilustração no hero da página inicial, reforçando o apelo visual do conteúdo sem comprometer a performance (ícones vetoriais embutidos, sem imagens externas) nem o modo de alto contraste.
+
 ### Etapa 8 - Ajustes Finais e Entrega (15h, 15h presenciais)
 Ajustes finais de conteúdo e estilo aplicados com base na verificação da Etapa 7. Entrega do código-fonte completo (pasta `site/`) à instituição parceira, com orientações básicas de manutenção descritas no `README.md` da raiz do projeto.
 
