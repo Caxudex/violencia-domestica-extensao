@@ -29,4 +29,4 @@
 
 ## Arquivo original
 
-A imagem do documento assinado foi compartilhada pelo estudante durante a sessão de desenvolvimento. Anexe o arquivo original (PDF ou foto) numa pasta de evidências da submissão (ex.: `docs/evidencias/`), já que este repositório documenta aqui apenas o conteúdo textual.
+A imagem do documento assinado está em `site/assets/declaracao-creas-timbo.jpeg` (publicada em `site/transparencia.html`) — não há cópia separada em `docs/`, para evitar duplicar o mesmo arquivo binário no repositório.
