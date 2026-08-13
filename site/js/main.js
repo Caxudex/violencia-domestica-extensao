@@ -471,7 +471,7 @@ function setupContactForm() {
       },
       body: JSON.stringify({
         access_key: accessKey,
-        subject: (form.elements["subject"] && form.elements["subject"].value) || "Nova mensagem - IndaCity",
+        subject: (form.elements["subject"] && form.elements["subject"].value) || "Nova mensagem - Rede Acolhe",
         name: name,
         email: email,
         message: message

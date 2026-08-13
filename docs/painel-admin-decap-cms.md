@@ -58,7 +58,7 @@ O projeto Netlify `incomparable-toffee-9df996` já foi criado e conectado ao Git
 1. **Corrigir o "Publish directory"** — hoje a raiz do site Netlify está dando 404. Vá em Project configuration → Build & deploy → Continuous deployment (ou "Build settings") → confira/edite o campo **"Publish directory"** para `site` → salve → em "Deploys", clique em "Trigger deploy" → "Deploy site". Depois disso, `https://incomparable-toffee-9df996.netlify.app/` deve mostrar a Home do site normalmente.
 
 2. **Criar um GitHub OAuth App**: GitHub → clique na sua foto de perfil → Settings → Developer settings (no fim do menu) → OAuth Apps → "New OAuth App".
-   - Application name: `IndaCity Admin` (ou o nome que preferir).
+   - Application name: `Rede Acolhe Admin` (ou o nome que preferir).
    - Homepage URL: `https://incomparable-toffee-9df996.netlify.app`
    - Authorization callback URL: `https://incomparable-toffee-9df996.netlify.app/callback`
    - Clique em "Register application", depois em "Generate a new client secret".
