@@ -927,6 +927,16 @@ html[data-contrast="high"] .card.emergency {
   border-color: #FFFF00 !important;
 }
 
+/* Esses títulos usam color: var(--color-primary-dark) diretamente (não
+   herdam do bloco acima), então sem isto ficam pretos sobre fundo preto. */
+html[data-contrast="high"] .hero h1,
+html[data-contrast="high"] .card h3,
+html[data-contrast="high"] .contact-info h2,
+html[data-contrast="high"] .contact-form-card h2,
+html[data-contrast="high"] .institutional-panel h2 {
+  color: #fff !important;
+}
+
 html[data-contrast="high"] .card.emergency .phone {
   color: #FFFF00;
 }
