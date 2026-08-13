@@ -4,7 +4,7 @@ Projeto de extensão universitária: site de conscientização e combate à viol
 
 ## Status do projeto
 
-Todas as etapas técnicas (1 a 9) estão documentadas e o site está implementado, testado e publicado (Lighthouse: Performance 97–98/100, Acessibilidade/Boas Práticas/SEO 100/100). Itens que ainda exigem ação pessoal do estudante antes da submissão final estão listados em [`docs/checklist-atividades.md`](docs/checklist-atividades.md), com a tabela oficial de acompanhamento (Atividade/CH/Finalizado) em [`docs/status-atividades-oficial.md`](docs/status-atividades-oficial.md).
+Todas as etapas técnicas (1 a 9) estão documentadas e o site está implementado, testado e publicado (Lighthouse: Performance 96–100/100, Acessibilidade/Boas Práticas/SEO 100/100). Itens que ainda exigem ação pessoal do estudante antes da submissão final estão listados em [`docs/checklist-atividades.md`](docs/checklist-atividades.md), com a tabela oficial de acompanhamento (Atividade/CH/Finalizado) em [`docs/status-atividades-oficial.md`](docs/status-atividades-oficial.md).
 
 ## Estrutura do repositório
 

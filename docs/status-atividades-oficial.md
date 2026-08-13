@@ -30,11 +30,11 @@ Esta tabela espelha exatamente a estrutura oficial de acompanhamento de horas do
 | 19 | Implementação da Solução - Refinamento do conteúdo (presencial) | 5 | ✅ Concluído | Conteúdo revisado com base no levantamento. |
 | 20 | Implementação da Solução - Ajustes UI | 5 | ✅ Concluído | Paleta institucional, ícone, cards, tipografia. |
 | 21 | Implementação da Solução - Ajustes UX | 5 | ✅ Concluído | Botão de saída rápida, VLibras, honeypot, rate limiting, formulário de contato real (Web3Forms). |
-| 22 | Implementação da Solução - Validação (presencial) | 5 | 🔶 Parcial | Validado tecnicamente (Lighthouse 97–100/100, testes automatizados); validação presencial com usuários reais pendente. |
+| 22 | Implementação da Solução - Validação (presencial) | 5 | 🔶 Parcial | Validado tecnicamente (Lighthouse 96–100/100, testes automatizados); validação presencial com usuários reais pendente. |
 | 23 | Verificação e Validação - Avaliar as funcionalidades (presencial) | 5 | 🔶 Parcial | Avaliação técnica completa (`docs/relatorio-final.md`, Etapa 7); avaliação presencial com a instituição pendente. |
 | 24 | Verificação e Validação - Validar as funcionalidades (presencial) | 5 | 🔶 Parcial | Idem. |
 | 25 | Verificação e Validação - Revisar as alterações necessárias (presencial) | 5 | 🔶 Parcial | Idem. |
-| 26 | Ajustes Finais e Entrega - Novos Testes | 5 | ✅ Concluído | Auditoria Lighthouse real (Performance 97–98, Acessibilidade/Boas Práticas/SEO 100). |
+| 26 | Ajustes Finais e Entrega - Novos Testes | 5 | ✅ Concluído | Auditoria Lighthouse real (Performance 96–100, Acessibilidade/Boas Práticas/SEO 100), reauditada em 13/08/2026 na versão oficial. |
 | 27 | Ajustes Finais e Entrega - Verificação pós ajustes (presencial) | 5 | ⚠️ Pendente | Requer validação com a instituição real (Timbó), ainda não formalizada. |
 | 28 | Ajustes Finais e Entrega - Validação pós ajustes (presencial) | 5 | ⚠️ Pendente | Idem. |
 | 29 | Escrita do Relatório - Desenvolvimento | 8 | ✅ Concluído | `docs/relatorio-final.md` e `docs/paper-academico.md` completos. |
