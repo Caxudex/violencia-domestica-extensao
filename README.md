@@ -9,9 +9,10 @@ Todas as etapas técnicas (1 a 9) estão documentadas e o site está implementad
 ## Estrutura do repositório
 
 ```
-docs/       Documentação do processo (Etapas 1-9) e documentos de submissão
-scripts/    Scripts para configurar e rodar o site localmente
-site/       Código-fonte do site (HTML/CSS/JS estático)
+docs/           Documentação do processo (Etapas 1-9) e documentos de submissão
+scripts/        Scripts para configurar e rodar o site localmente
+site/           Código-fonte do site (HTML/CSS/JS estático)
+submissao-ava/  Pacote de entrega pronto para anexar no AVA (ver submissao-ava/README.md)
 ```
 
 ## Como rodar o site
@@ -55,11 +56,15 @@ A documentação do processo não é mais publicada no site (removida por decis�
 
 ## Painel administrativo
 
-[`site/admin/`](site/admin/index.html) é um painel (Decap CMS) para editar os dados da instituição (nome, endereço, telefone, e-mail, texto da parceria) sem mexer em código — as mudanças viram commits neste repositório e o site publicado atualiza sozinho. **Pendente:** falta ativar o login (Netlify Identity + Git Gateway), passo que só pode ser feito por quem tem acesso às contas do GitHub/Netlify - siga `docs/painel-admin-decap-cms.md`.
+[`site/admin/`](site/admin/index.html) é um painel (Decap CMS) para editar os dados da instituição e o conteúdo geral do site (45 campos) sem mexer em código — as mudanças viram commits neste repositório e o site publicado atualiza sozinho. Login via GitHub OAuth configurado e testado de ponta a ponta. Detalhes em `docs/painel-admin-decap-cms.md`.
 
 ## Manutenção futura
 
 O site não depende de servidor, banco de dados ou build tools - qualquer edição pode ser feita diretamente nos arquivos `.html`, `css/style.css` e `js/main.js` dentro de `site/`, ou pelo painel administrativo acima para os dados da instituição. Para adicionar uma nova página, copie a estrutura de header/footer de uma página existente (ex.: `sobre.html`) e ajuste o conteúdo e o link `aria-current="page"` no menu.
+
+## Pacote de submissão para o AVA
+
+[`submissao-ava/`](submissao-ava/README.md) reúne cópias dos documentos finais (relatório, paper, termo de parceria, ficha de frequência, declaração do CREAS, tabela oficial de status) organizadas e mapeadas às 31 atividades do edital, prontas para anexar no Ambiente Virtual de Aprendizagem. O README dessa pasta lista exatamente o que ainda depende de ação pessoal do estudante antes do envio.
 
 ## Observação sobre a entrega da atividade extensionista
 
