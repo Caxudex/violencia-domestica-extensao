@@ -63,6 +63,9 @@ Os dois documentos que a instituição concedente deve fornecer/assinar para com
 - ✅ Widget VLibras (tradutor de Libras) em todo o site, por exigência de acessibilidade da LBI.
 - ✅ Paleta de cores institucional (padrão gov.br), favicon, ícone no cabeçalho, Open Graph, página 404 personalizada.
 - ✅ Content Security Policy reforçada, honeypot anti-spam e rate limiting no formulário de contato.
-- ✅ Auditoria Lighthouse real: Performance 97–98/100, Acessibilidade/Boas Práticas/SEO 100/100.
+- ✅ Auditoria Lighthouse real: Performance 96–100/100, Acessibilidade/Boas Práticas/SEO 100/100 (reauditado em 13/08/2026 após ícones, ilustração da Home, página Transparência e ajustes de alto contraste - sem regressões).
 - ✅ Barra institucional, rodapé em colunas, breadcrumbs e botão de alto contraste (visual mais próximo de portal gov.br) em todas as páginas.
 - ✅ Painel administrativo (Decap CMS) em `site/admin/`, editando `site/content/institution.json` (nome, endereço, telefone, e-mail, horário, status da parceria, texto da parceria) sem precisar mexer em HTML - login via GitHub OAuth configurado e testado de ponta a ponta (login → edição → publicação → commit → site atualizado). Escopo intencionalmente limitado aos dados institucionais (o que muda de verdade e é crítico estar certo); conteúdo normativo (Legislação, Tipos de Violência etc.) permanece fora do painel, controlado por revisão de código - ver `docs/painel-admin-decap-cms.md`.
+- ✅ Página `site/transparencia.html`: publica a Declaração de Pertinência e Relevância Social do CREAS de Timbó (imagem + transcrição), com link "Transparência" no menu de todas as páginas.
+- ✅ Ícones SVG ilustrativos em todos os cards do site e ilustração no hero da Home, em resposta a uma sugestão real recebida pelo formulário de avaliação da comunidade (`site/participe.html`) - ver Etapa 7 em `docs/relatorio-final.md`.
+- ✅ Correção de bug de acessibilidade no modo alto contraste: títulos (`h1`/`h2`/`h3` de hero, cards e painéis) ficavam pretos sobre fundo preto.
