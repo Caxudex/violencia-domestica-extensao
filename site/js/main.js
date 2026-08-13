@@ -1,13 +1,7 @@
-// Caminho relativo para páginas em site/documentos/, que ficam um nível abaixo.
 function getBasePrefix() {
   return window.location.pathname.indexOf("/documentos/") !== -1 ? "../" : "";
 }
 
-// Botão de saída rápida: redireciona imediatamente e substitui a entrada
-// no histórico para reduzir o risco de a página ser reaberta com "voltar".
-// Também é retirado do menu mobile (que fica escondido por padrão) e
-// colocado direto no cabeçalho, para nunca ficar oculto atrás do "☰ Menu",
-// além de ganhar um atalho de teclado (Esc) para não depender de mirar no botão.
 function setupExitButton() {
   var headerInner = document.querySelector(".header-inner");
   var navToggle = document.querySelector(".nav-toggle");
@@ -60,8 +54,6 @@ function setupNavToggle() {
   });
 }
 
-// Controle de tamanho de fonte (A- / A+), injetado em todas as páginas
-// a partir deste script único, sem precisar editar cada HTML.
 function setupFontSizeControl() {
   var STORAGE_KEY = "font-size-pref";
   var LEVELS = ["normal", "lg", "xl"];
@@ -119,13 +111,6 @@ function setupFontSizeControl() {
   });
 }
 
-// Carrega um arquivo JSON de site/content/ (editado pelo painel administrativo,
-// site/admin/, Decap CMS) e aplica seus campos a elementos marcados no HTML.
-// Qualquer elemento com data-{prefix}="campo" tem o texto substituído;
-// data-{prefix}-href="prefixoDoLink:campo" atualiza o atributo href (ex.:
-// tel:/mailto:). O HTML já traz os valores reais como fallback, então a
-// página funciona normalmente mesmo se o fetch falhar — isto só sincroniza
-// com edições feitas depois pelo painel admin.
 function loadJsonContent(url, attrPrefix) {
   var selector = "[data-" + attrPrefix + "], [data-" + attrPrefix + "-href]";
   if (!document.querySelector(selector)) return;
@@ -148,32 +133,17 @@ function loadJsonContent(url, attrPrefix) {
         if (data[field] !== undefined) el.setAttribute("href", prefix + ":" + data[field]);
       });
     })
-    .catch(function () {
-      // Mantém os valores estáticos já presentes no HTML.
-    });
+    .catch(function () {});
 }
 
-// Dados da instituição parceira (nome, endereço, telefone, e-mail, texto da
-// parceria) - site/content/institution.json.
 function setupInstitutionContent() {
   loadJsonContent("content/institution.json", "institution");
 }
 
-// Textos gerais do site que mudam com alguma frequência mas são de baixo
-// risco (não normativos): título/texto do hero da Home e as descrições dos
-// números de emergência - site/content/site.json. Deliberadamente NÃO inclui
-// os próprios números (180/190/100) nem conteúdo normativo (Legislação,
-// Tipos de Violência) - ver docs/painel-admin-decap-cms.md.
 function setupSiteContent() {
   loadJsonContent("content/site.json", "site");
 }
 
-// Trilha de navegação ("Você está em: Home > Página"), injetada no topo de
-// <main> a partir deste script único, sem precisar editar cada HTML.
-// Usa o link com aria-current="page" do menu como fonte do rótulo; quando a
-// página não está no menu principal (ex.: Segurança Digital), cai para o
-// início do <title>. Página de erro (404, com meta robots noindex) e a
-// própria Home (que já é o topo da trilha) não recebem o componente.
 function setupBreadcrumbs() {
   var main = document.querySelector("#conteudo");
   if (!main || document.querySelector('meta[name="robots"]')) return;
@@ -191,9 +161,6 @@ function setupBreadcrumbs() {
   main.insertBefore(nav, main.firstChild);
 }
 
-// Botão "Alto contraste" (padrão comum em sites gov.br), injetado ao lado do
-// controle de tamanho de fonte. Alterna o atributo data-contrast="high" na
-// raiz do documento, que o CSS usa para aplicar o tema preto/amarelo.
 function setupContrastControl() {
   var STORAGE_KEY = "contrast-pref";
   var anchor = document.querySelector(".font-size-control") || document.querySelector(".logo");
@@ -223,10 +190,6 @@ function setupContrastControl() {
   });
 }
 
-// Enquanto o Google Form real da página Participe não for configurado, o
-// iframe placeholder mostra um erro feio do Google Drive ("Sorry, the file
-// you have requested does not exist"). Troca isso por uma mensagem amigável,
-// mantendo a área visível em vez de escondida.
 function setupFormEmbed() {
   var container = document.querySelector("#form-embed");
   if (!container) return;
@@ -248,8 +211,6 @@ function setupFormEmbed() {
   }
 }
 
-// Parser simples de CSV que respeita campos entre aspas (necessário porque
-// respostas de texto livre do formulário podem conter vírgulas).
 function parseCsv(text) {
   var rows = [];
   var row = [];
@@ -299,12 +260,6 @@ function findColumnIndex(headerRow, keyword) {
   return -1;
 }
 
-// Contador de participantes na página Participe: lê a planilha de respostas
-// do Google Sheets publicada na web como CSV (vinculada ao formulário de
-// avaliação) e mostra dois números - total de avaliações, e quantas têm o
-// campo "Instituição/Organização" preenchido (presença institucional
-// registrada). Enquanto o link não for configurado (ver
-// docs/formulario-avaliacao-comunidade.md), o elemento fica oculto.
 function setupParticipantCounter() {
   var el = document.querySelector("#participant-counter");
   if (!el) return;
@@ -386,9 +341,6 @@ function setupFeedbackWidget() {
   } else {
     widget.querySelectorAll(".feedback-btn").forEach(function (btn) {
       btn.addEventListener("click", function () {
-        // Registro local apenas (sem backend nesta entrega - RNF05).
-        // Quando o Google Form real da Etapa/Atividade 31 estiver pronto,
-        // este evento pode ser conectado a ele (ver docs/formulario-avaliacao-comunidade.md).
         localStorage.setItem(storageKey, btn.getAttribute("data-answer"));
         showThanks();
       });
@@ -396,9 +348,6 @@ function setupFeedbackWidget() {
   }
 }
 
-// Remove tags HTML de uma string (defesa em profundidade: mesmo que este
-// campo nunca seja re-inserido no DOM hoje, evita que passe adiante se o
-// formulário vier a ser conectado a um backend/serviço no futuro).
 function stripHtml(value) {
   return value.replace(/<[^>]*>/g, "");
 }
@@ -408,13 +357,11 @@ function setupContactForm() {
   if (!form) return;
   var status = document.querySelector("#form-status");
   var RATE_LIMIT_KEY = "contact-form-last-submit";
-  var RATE_LIMIT_MS = 30000; // 30 segundos entre envios
+  var RATE_LIMIT_MS = 30000;
 
   form.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    // Honeypot: campo invisível que só bots costumam preencher.
-    // Finge sucesso para não revelar a detecção, mas não processa nada.
     var honeypot = form.elements["website"];
     if (honeypot && honeypot.value.trim() !== "") {
       status.textContent = "Mensagem registrada. Em caso de emergência, ligue 190.";
@@ -423,8 +370,6 @@ function setupContactForm() {
       return;
     }
 
-    // Rate limiting básico (client-side, não é proteção robusta contra um
-    // atacante determinado, mas reduz reenvios acidentais/abuso casual).
     var lastSubmit = localStorage.getItem(RATE_LIMIT_KEY);
     if (lastSubmit && (Date.now() - parseInt(lastSubmit, 10)) < RATE_LIMIT_MS) {
       status.textContent = "Aguarde um momento antes de enviar novamente.";
@@ -448,9 +393,6 @@ function setupContactForm() {
       return;
     }
 
-    // Envio real via Web3Forms (serviço gratuito, sem backend próprio -
-    // RNF05 continua respeitado, já que não hospedamos servidor algum).
-    // Guia de configuração: docs/formulario-contato-web3forms.md
     var accessKey = form.getAttribute("data-web3forms-key") || "";
     if (!accessKey || accessKey.indexOf("SUBSTITUA") !== -1) {
       status.textContent = "O envio ainda não foi configurado. Em caso de emergência, ligue 190.";
@@ -499,12 +441,6 @@ function setupContactForm() {
   });
 }
 
-// Widget VLibras (tradutor de Libras do governo federal), injetado em todas
-// as páginas a partir deste script único. Padrão comum em sites públicos
-// brasileiros, por exigência de acessibilidade (LBI - Lei 13.146/2015).
-// Entrada suave das seções ao rolar a página. Progressive enhancement: a
-// classe .reveal só é adicionada aqui, então sem JS (ou com
-// prefers-reduced-motion) o conteúdo permanece visível normalmente.
 function setupScrollReveal() {
   var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (reduceMotion || !("IntersectionObserver" in window)) return;

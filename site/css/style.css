@@ -60,9 +60,6 @@ body {
   to { opacity: 1; }
 }
 
-/* Entrada suave das seções ao rolar a página. A classe .reveal só existe
-   quando o JS a aplica (progressive enhancement): sem JS, o conteúdo
-   simplesmente aparece visível desde o início. */
 .reveal {
   opacity: 0;
   transform: translateY(14px);
@@ -99,7 +96,6 @@ img {
   left: 0;
 }
 
-/* Barra institucional (padrão de identificação usado em sites gov.br) */
 .gov-bar {
   background: var(--color-primary-dark);
   color: #fff;
@@ -131,7 +127,6 @@ img {
   text-decoration: none;
 }
 
-/* Header */
 .site-header {
   position: sticky;
   top: 0;
@@ -310,7 +305,6 @@ img {
   }
 }
 
-/* Trilha de navegação (breadcrumbs), injetada via JS no topo de <main> */
 .breadcrumbs {
   margin: 0 0 1.25rem;
   font-size: 0.85rem;
@@ -350,7 +344,6 @@ img {
   color: var(--color-text);
 }
 
-/* Layout */
 main {
   max-width: 1100px;
   margin: 0 auto;
@@ -572,7 +565,6 @@ th {
   background: var(--color-primary-tint);
 }
 
-/* Visualmente oculto, mas ainda lido por leitores de tela */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -585,7 +577,6 @@ th {
   border: 0;
 }
 
-/* Contato */
 .contact-grid {
   display: grid;
   grid-template-columns: minmax(280px, 1fr) minmax(320px, 1.6fr);
@@ -644,8 +635,6 @@ th {
   color: var(--color-alert-dark);
 }
 
-/* Campo honeypot anti-spam: invisível para pessoas, mas bots de formulário
-   costumam preencher todos os campos, inclusive este. */
 .hp-field {
   position: absolute;
   left: -9999px;
@@ -654,7 +643,6 @@ th {
   overflow: hidden;
 }
 
-/* Form */
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -722,7 +710,6 @@ th {
   color: var(--color-alert-dark);
 }
 
-/* Participe: contador, formulário e painel institucional */
 .participant-counter {
   display: inline-block;
   margin-top: 1rem;
@@ -773,8 +760,6 @@ th {
   color: var(--color-primary-dark);
 }
 
-/* Reserva o espaço do widget VLibras desde o início, para evitar que ele
-   cause layout shift ao ser injetado dinamicamente pelo script externo. */
 div[vw] {
   position: fixed;
   bottom: 0;
@@ -789,7 +774,6 @@ div[vw].enabled {
   height: auto;
 }
 
-/* Feedback widget */
 .feedback-widget {
   background: #fff;
   border: 1px solid var(--color-border);
@@ -836,7 +820,6 @@ div[vw].enabled {
   font-weight: 600;
 }
 
-/* Footer */
 .site-footer {
   background: var(--color-primary-dark);
   color: #fff;
@@ -899,9 +882,6 @@ div[vw].enabled {
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* Alto contraste (acessibilidade) - ativado pelo botão "Alto contraste" no
-   cabeçalho, estado salvo em localStorage. Segue o padrão preto/amarelo
-   usado no modo de alto contraste de sites gov.br. */
 html[data-contrast="high"] {
   --color-primary: #000000;
   --color-primary-dark: #000000;
@@ -954,8 +934,6 @@ html[data-contrast="high"] .card.emergency {
   border-color: #FFFF00 !important;
 }
 
-/* Esses títulos usam color: var(--color-primary-dark) diretamente (não
-   herdam do bloco acima), então sem isto ficam pretos sobre fundo preto. */
 html[data-contrast="high"] .hero h1,
 html[data-contrast="high"] .card h3,
 html[data-contrast="high"] .contact-info h2,
