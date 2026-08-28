@@ -1,0 +1,58 @@
+HISTORICO DE DESENVOLVIMENTO
+Site sobre Enfrentamento a Violencia Domestica
+
+Este arquivo documenta as datas reais de desenvolvimento do projeto. O
+historico de commits no git foi condensado em 28/08/2026 para deixar
+o repositorio mais organizado (de 32 commits individuais para 4 commits
+por marco), mas o trabalho foi realizado ao longo das datas abaixo.
+
+Total de commits originais: 32
+Periodo de desenvolvimento: 28/07/2026 a 28/08/2026
+
+
+MARCO 1: Site inicial (28/07/2026)
+------------------------------------
+13:54  e4c0a62  Site de conscientizacao e combate a violencia domestica: paginas, docs do projeto de extensao e scripts
+14:09  69308b9  Melhorias de UX/UI e acessibilidade: contraste WCAG AA, controle de tamanho de fonte, aria do menu mobile, links tel:, widget de avaliacao rapida
+14:26  822277d  Corrige botao de saida escondido no menu mobile, adiciona atalho Esc, pagina de Seguranca Digital, e registro de participacao institucional + contador na pagina Participe
+15:13  309d0f0  Substitui instituicao ficticia por Prefeitura Municipal de Indaial (parceria em formalizacao); melhora contador de participantes, form de avaliacao e pagina de Contato
+15:45  a4463fb  Rebrand do site para IndaCity (Prefeitura vira instituicao de referencia, nao a marca do site); remove Documentacao do site publico
+16:04  1c1edbf  Paleta corporativa azul marinho (acessivel), corrige links reais de contato (tel/email), melhora UI do formulario de contato
+18:02  8f24315  Icone no cabecalho, paleta gov.br, animacoes/UX, VLibras+favicon+OG+404+CSP, seguranca do formulario (honeypot/rate limit/sanitizacao), integracao real com Web3Forms no Contato
+
+
+MARCO 2: Instituicao parceira e painel administrativo (12/08/2026)
+------------------------------------
+10:12  e763271  Instituicao parceira atualizada: Secretaria de Assistencia Social de Timbo (substitui Indaial); reseta dados de contato para placeholders ate confirmacao
+12:24  446d9ee  Cria docs/status-atividades-oficial.md (tabela oficial CH/Finalizado das 31 atividades) e atualiza checklist/README
+12:29  a69d00d  Corrige CRAS para CREAS onde o projeto se refere a especialista/instituicao de violencia domestica (CREAS = protecao social especial)
+13:11  7260b3d  Design institucional (gov.br) + integra declaracao do CREAS de Timbo
+14:58  02c721d  Painel administrativo (Decap CMS) + Etapa 6: justifica escolha tecnologica
+15:36  68ba6d7  Update Instituicao parceira "dados"
+15:53  18d0e81  Update Instituicao parceira "dados"
+16:02  17580b6  Painel admin: marca como concluido e testado, documenta escopo
+16:10  dd07986  Amplia painel admin: nova colecao 'Conteudo geral do site'
+16:16  c1fb9e1  Painel admin: mais 9 campos de baixo risco na colecao 'site'
+19:51  3b96463  Painel admin: cobre herois e cards de todas as paginas (35 campos)
+20:05  1014cf1  Atualiza docs/painel-admin-decap-cms.md com o escopo ampliado (35 campos)
+20:13  68dbce5  Nova pagina site/transparencia.html: declaracao do CREAS de Timbo publica
+
+
+MARCO 3: Rebrand e polimento final (13/08/2026)
+------------------------------------
+10:19  a0be187  Renomeia a marca do site de IndaCity para Rede Acolhe
+10:30  09609d8  Adiciona icones SVG inline em todos os cards do site
+10:37  c5ce4eb  Corrige alto contraste: titulos (h1/h2/h3) invisiveis, preto sobre preto
+10:45  a9ecd58  Adiciona ilustracao ao hero da Home + registra feedback real no relatorio
+10:48  678b10b  Documenta pagina de transparencia, icones/ilustracao e fix de alto contraste no checklist
+10:52  74826a1  Limpeza: remove imagem duplicada em docs/Certificado (ja esta em site/assets) e .gitkeep obsoleto
+10:57  f4bc40f  Reduz docs/painel-admin-decap-cms.md ao necessario: remove passo a passo historico e detalhes de infraestrutura ja concluidos
+11:08  0a869e1  Reauditoria Lighthouse da versao oficial: Home 100/100/100/100, Contato 96/100/100/100, Transparencia 97/100/100/100
+11:21  3982630  Preenche Instituicao de Ensino (UNIASSELVI) e monta pacote de submissao AVA
+17:22  70fa5ed  Remove comentarios explicativos do codigo publico (JS/CSS/HTML)
+
+
+MARCO 4: Organizacao do repositorio (28/08/2026)
+------------------------------------
+10:01  62ed23f  Remove submissao-ava/ e scripts/ do controle de versao
+10:05  26184bc  Simplifica e revisa o texto do README
